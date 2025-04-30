@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: hotpink;
+  color: #010101;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid;
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+}
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #010101;
+  font-style: italic;
+}
+
+.navbar .logo span {
+  color: hotpink;
+}
+
+.navbar .menu a {
+  color: #010101;
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+}
+
+.navbar .menu a:hover {
+  color: hotpink;
+}
+
+.navbar .menu a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid hotpink;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .menu a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-ekstra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-ekstra a:hover {
+  color: var(--primary);
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+  /* background-size: cover;
+  background-position: center; */
+  position: relative;
+  background-repeat: no-repeat;
+  padding-right: 0;
+  /* padding-top: 40px; */
+  /*padding-bottom: 30px; */
+}
+
+.main .content {
+  padding-right: 30px;
+  padding-left: 20px;
+  max-width: 60rem;
+  flex: 1;
+}
+
+.main .content h1 {
+  font-size: 3.5em;
+  color: #010101;
+  line-height: 1, 2;
+}
+
+.main .content p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+}
+
+.main .image {
+  flex: 1;
+  position: relative;
+  align-self: stretch;
+  margin-right: 0;
+  padding-right: 0;
+  min-height: 400px;
+  clip-path: ellipse(100% 50% at 110% 50%);
+}
+
+.main .image-main {
+  display: block;
+  width: 85%;
+  height: 85%;
+  object-fit: cover;
+  object-position: center;
+}
