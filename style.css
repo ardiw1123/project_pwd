@@ -10,7 +10,7 @@
 html {
   scroll-behavior: smooth;
 }
-
+/* Index Start */
 body {
   font-family: "Poppins", sans-serif;
   background-color: hotpink;
@@ -29,6 +29,7 @@ body {
   right: 0;
   left: 0;
   z-index: 9999;
+  text-decoration: none;
 }
 .navbar .logo {
   font-size: 2rem;
@@ -41,18 +42,18 @@ body {
   color: hotpink;
 }
 
-.navbar .menu a {
+.navbar .navbar-menu a {
   color: #010101;
   display: inline-block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0 1rem;
 }
 
-.navbar .menu a:hover {
+.navbar .navbar-menu a:hover {
   color: hotpink;
 }
 
-.navbar .menu a::after {
+.navbar .navbar-menu a::after {
   content: "";
   display: block;
   padding-bottom: 0.5rem;
@@ -61,17 +62,17 @@ body {
   transition: 0.2s linear;
 }
 
-.navbar .menu a:hover::after {
+.navbar .navbar-menu a:hover::after {
   transform: scaleX(0.5);
 }
 
 .navbar .navbar-ekstra a {
-  color: #fff;
+  color: #010101;
   margin: 0 0.5rem;
 }
 
 .navbar .navbar-ekstra a:hover {
-  color: var(--primary);
+  color: hotpink;
 }
 
 .main {
@@ -124,4 +125,68 @@ body {
   height: 85%;
   object-fit: cover;
   object-position: center;
+}
+
+/* Index end */
+
+/* Serum Start */
+
+.kategori h2 {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.kategori p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.kategori .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.kategori .row .kategori-card {
+  text-align: center;
+  padding-bottom: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: calc(33.333% - 1.5rem);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kategori .row .kategori-card:hover {
+  transform: translateY(-15px);
+}
+
+.kategori .row .kategori-card img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.kategori .row .kategori-card .merek-kategori {
+  margin: 1rem auto 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.kategori .row .kategori-card .price {
+  font-weight: 500;
+  color: deeppink;
 }
