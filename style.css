@@ -8,10 +8,10 @@
 }
 
 :root {
-  --primary: #133e87;
-  --bg: #cbdceb;
-  --card: #608bc1;
-  --option: #f3f3e0;
+  --primary: #FFCCCC;
+  --bg: #FFDDCC;
+  --card: #FEBBCC;
+  --option: #FFDDCC;
 }
 html {
   scroll-behavior: smooth;
@@ -29,7 +29,7 @@ body {
   align-items: center;
   padding: 1.4rem 7%;
   background-color: var(--primary);
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #ffffff;
   position: relative;
   top: 0;
   right: 0;
@@ -195,4 +195,47 @@ body {
 .kategori .row .kategori-card .price {
   font-weight: 500;
   color: #fff;
+}
+
+.products {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  border: 1px solid #FEBBCC;
+  background-color: #ffe4e1;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  color: #f4a1b6;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #FFCCCC;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
 }
