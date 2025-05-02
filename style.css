@@ -7,13 +7,19 @@
   text-decoration: none;
 }
 
+:root {
+  --primary: #133e87;
+  --bg: #cbdceb;
+  --card: #608bc1;
+  --option: #f3f3e0;
+}
 html {
   scroll-behavior: smooth;
 }
 /* Index Start */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: hotpink;
+  background-color: var(--option);
   color: #010101;
 }
 
@@ -22,8 +28,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.4rem 7%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid;
+  background-color: var(--primary);
+  border-bottom: 1px solid #fff;
   position: relative;
   top: 0;
   right: 0;
@@ -34,30 +40,30 @@ body {
 .navbar .logo {
   font-size: 2rem;
   font-weight: 700;
-  color: #010101;
+  color: #fff;
   font-style: italic;
 }
 
 .navbar .logo span {
-  color: hotpink;
+  color: var(--card);
 }
 
 .navbar .navbar-menu a {
-  color: #010101;
+  color: #fff;
   display: inline-block;
   font-size: 1rem;
   margin: 0 1rem;
 }
 
 .navbar .navbar-menu a:hover {
-  color: hotpink;
+  color: var(--card);
 }
 
 .navbar .navbar-menu a::after {
   content: "";
   display: block;
   padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid hotpink;
+  border-bottom: 0.1rem solid var(--card);
   transform: scaleX(0);
   transition: 0.2s linear;
 }
@@ -67,19 +73,19 @@ body {
 }
 
 .navbar .navbar-ekstra a {
-  color: #010101;
+  color: #fff;
   margin: 0 0.5rem;
 }
 
 .navbar .navbar-ekstra a:hover {
-  color: hotpink;
+  color: var(--card);
 }
 
 .main {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-color: aliceblue;
+  background-color: var(--option);
   /* background-size: cover;
   background-position: center; */
   position: relative;
@@ -98,7 +104,7 @@ body {
 
 .main .content h1 {
   font-size: 3.5em;
-  color: #010101;
+  color: #333;
   line-height: 1, 2;
 }
 
@@ -129,7 +135,7 @@ body {
 
 /* Index end */
 
-/* Serum Start */
+/* Kategori Start */
 
 .kategori h2 {
   margin-bottom: 1rem;
@@ -145,7 +151,7 @@ body {
   margin: auto;
   font-weight: 300;
   line-height: 1.6;
-  color: #fff;
+  color: #333;
 }
 
 .kategori .row {
@@ -162,7 +168,7 @@ body {
   padding: 1rem;
   box-sizing: border-box;
   width: calc(33.333% - 1.5rem);
-  background-color: #ffffff;
+  background-color: var(--card);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -172,9 +178,9 @@ body {
 }
 
 .kategori .row .kategori-card img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  border-radius: 10%;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   display: block;
   margin: 0 auto 1rem auto;
@@ -188,5 +194,5 @@ body {
 
 .kategori .row .kategori-card .price {
   font-weight: 500;
-  color: deeppink;
+  color: #fff;
 }
