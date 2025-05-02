@@ -104,7 +104,7 @@ body {
 
 .main .content h1 {
   font-size: 3.5em;
-  color: #010101;
+  color: #333;
   line-height: 1, 2;
 }
 
@@ -151,7 +151,7 @@ body {
   margin: auto;
   font-weight: 300;
   line-height: 1.6;
-  color: #fff;
+  color: #333;
 }
 
 .kategori .row {
@@ -178,9 +178,9 @@ body {
 }
 
 .kategori .row .kategori-card img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  border-radius: 10%;
+  width: 220px;
+  height: 220px;
   object-fit: cover;
   display: block;
   margin: 0 auto 1rem auto;
