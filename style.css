@@ -216,6 +216,7 @@ body {
 .product-card {
   border: 1px solid #FEBBCC;
   background-color: #ffe4e1;
+  color: #010101;
   padding: 1rem;
   border-radius: 10px;
   transition: transform 0.3s ease;
