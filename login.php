@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,8 +16,28 @@
     />
   </head>
   <body>
+  <?php
+  session_start();
+  include 'connect.php';
+  ?>
+
     <div class="login-user">
       <h2>Silahkan Login</h2>
+      <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+
+                $result = mysqli_query($connect, "SELECT * FROM user WHERE username='$username'");
+                $user = mysqli_fetch_assoc($result);
+
+            if ($user && $password == $user['password']) {
+                $_SESSION['username'] = $username;
+                header("Location: index.php");
+            } else {
+                echo "<p>Login gagal! Username atau Password salah</p>";
+            }
+            }?>
       <form class="form-login" action="" method="post">
         <div class="input-grup">
           <input
