@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +16,41 @@
     />
   </head>
   <body>
+  <?php
+  session_start();
+  include 'connect.php';
+  ?>
+
+<center>
+    <div class="card" style="width: 25rem;">
+        <div class="card-header">
+            LOGIN
+            </div>
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+
+                $result = mysqli_query($connect, "SELECT * FROM user WHERE username='$username'");
+                $user = mysqli_fetch_assoc($result);
+
+            if ($user && $password == $user['password']) {
+                $_SESSION['username'] = $username;
+                header("Location: index.php");
+            } else {
+                echo "<p>Login gagal! Username atau Password salah</p>";
+            }
+            }?>
+            <div class="card-body">
+            <form method="POST">
+                <input type="text" name="username" placeholder="Username" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="submit" name="login" value="Login">
+            </form>
+        </div>
+    </div>
+    </center>
+
     <div class="login-user">
       <h2>Silahkan Login</h2>
       <form class="form-login" action="" method="post">
