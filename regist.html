@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regist</title>
+    <!-- styling -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="regist-user">
+      <h2>Buat Akun</h2>
+      <form class="form-regist" action="" method="post">
+        <div class="input-grup">
+          <input
+            type="text"
+            id="email-input"
+            name="email"
+            placeholder=" "
+            required
+          />
+          <label for="email-input">Email</label>
+        </div>
+        <div class="input-grup">
+          <input
+            type="text"
+            id="nama-lengkap"
+            name="nama"
+            placeholder=" "
+            required
+          />
+          <label for="nama-lengkap">Nama Lengkap</label>
+        </div>
+        <div class="input-grup">
+          <input
+            type="text"
+            id="no-telp"
+            name="no_handphone"
+            placeholder=" "
+            required
+          />
+          <label for="no-telp">No Handphone</label>
+        </div>
+        <div class="input-grup">
+          <input
+            type="text"
+            id="provinsi"
+            name="provinsi"
+            placeholder=" "
+            required
+          />
+          <label for="provinsi">Provinsi</label>
+        </div>
+        <div class="input-grup">
+          <input
+            type="text"
+            id="kabupaten"
+            name="kabupaten"
+            placeholder=" "
+            required
+          />
+          <label for="kabupaten">Kabupaten/Kota</label>
+        </div>
+        <div class="input-grup">
+          <input
+            type="text"
+            name="kecamatan"
+            placeholder=" "
+            id="kecamatan"
+            required
+          />
+          <label for="kecamatan">Kecamatan</label>
+        </div>
+        <div class="input-grup">
+          <input type="text" name="desa" placeholder=" " id="desa" required />
+          <label for="desa">Desa</label>
+        </div>
+        <div class="input-grup">
+          <textarea
+            name="alamat"
+            placeholder=" "
+            id="alamat"
+            rows="5"
+            cols="5"
+          ></textarea>
+          <label for="alamat">Alamat Lengkap</label>
+        </div>
+        <div class="input-grup">
+          <input
+            type="password"
+            name="password"
+            placeholder=" "
+            id="password"
+            required
+          />
+          <label for="password">Password</label>
+        </div>
+        <div class="input-grup">
+          <input
+            type="password"
+            name="password"
+            placeholder=" "
+            id="password-konfirm"
+          />
+          <label for="password-konfirm">Konfirmasi Password</label>
+        </div>
+        <button type="submit" class="daftar" name="daftar">Daftar</button>
+      </form>
+      <p>Sudah punya akun?</p>
+      <a href="login.html">Login Disini</a>
+    </div>
+  </body>
+</html>

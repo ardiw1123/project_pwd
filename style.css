@@ -8,10 +8,10 @@
 }
 
 :root {
-  --primary: #FFCCCC;
-  --bg: #FFDDCC;
-  --card: #FEBBCC;
-  --option: #FFDDCC;
+  --primary: #ffcccc;
+  --bg: #ffddcc;
+  --card: #febbcc;
+  --option: #ffddcc;
 }
 html {
   scroll-behavior: smooth;
@@ -214,7 +214,7 @@ body {
 }
 
 .product-card {
-  border: 1px solid #FEBBCC;
+  border: 1px solid #febbcc;
   background-color: #ffe4e1;
   color: #010101;
   padding: 1rem;
@@ -225,7 +225,7 @@ body {
 .product-card:hover {
   transform: translateY(-5px);
   color: #f4a1b6;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
@@ -234,13 +234,14 @@ body {
 }
 
 footer {
-  background-color: #FFCCCC;
+  background-color: #ffcccc;
   color: white;
   text-align: center;
   padding: 2rem;
   margin-top: 3rem;
 }
 
+<<<<<<< HEAD
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -292,3 +293,197 @@ footer {
 .login-btn:hover {
   background: #FFCCCC;
 }
+=======
+/* Kategori End */
+
+/* Login Start */
+
+.login-user {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.login-user h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.form-login {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-grup {
+  margin-bottom: 25px;
+  text-align: left;
+  position: relative;
+}
+
+.input-grup input {
+  width: 100%;
+  padding: 15px 10px 5px 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #333;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.input-grup input:focus {
+  border-bottom-color: #ff69b4;
+}
+
+.input-grup label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #aaa;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  padding: 0 5px;
+  background-color: #fff;
+}
+
+.input-grup input:focus + label,
+.input-grup input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 8px;
+  font-size: 0.8rem;
+  color: #ff69b4;
+  font-weight: 600;
+}
+
+.input-grup input::placeholder {
+  color: transparent;
+}
+.login {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ff69b4;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.login:hover {
+  background-color: #ff851c;
+}
+
+.login-user p {
+  margin-top: 20px;
+  color: #555;
+}
+
+.login-user a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-user a:hover {
+  text-decoration: underline;
+}
+
+/* login end */
+
+/* Regist Start */
+
+.regist-user {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.regist-user h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-regist {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-regist input[type="text"],
+.form-regist input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.form-regist input[type="text"]::placeholder,
+.form-regist input[type="password"]::placeholder {
+  color: #aaa;
+}
+
+.form-regist textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.form-regist textarea::placeholder {
+  color: #aaa;
+}
+
+.daftar {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #ff69b4;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.daftar:hover {
+  background-color: #ff851c;
+}
+
+.regist-user p {
+  margin-top: 20px;
+  color: #555;
+}
+
+.regist-user a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.regist-user a:hover {
+  text-decoration: underline;
+}
+>>>>>>> a34730d4e9b1c1280f04f44d97629a9e1c08fd83
