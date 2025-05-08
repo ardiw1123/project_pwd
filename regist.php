@@ -1,3 +1,23 @@
+<?php
+include "connect.php";
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["daftar"])){
+$email = $_POST['email'];
+$password = $_POST['password'];
+$nama = $_POST['nama'];
+$no_handphone = $_POST['no_handphone'];
+$provinsi = $_POST['provinsi'];
+$kabupaten = $_POST['kabupaten'];
+$kecamatan = $_POST['kecamatan'];
+$desa = $_POST['desa'];
+$alamat = $_POST['alamat'];
+}
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,7 +39,7 @@
   <body>
     <div class="regist-user">
       <h2>Buat Akun</h2>
-      <form class="form-regist" action="" method="post">
+      <form class="form-regist" action="regist.php" method="post">
         <div class="input-grup">
           <input
             type="text"
@@ -109,5 +129,19 @@
       <p>Sudah punya akun?</p>
       <a href="login.html">Login Disini</a>
     </div>
+    <?php 
+    if (empty($email) || empty($password) || empty($nama) || empty($no_handphone) || empty($provinsi) || empty($kabupaten) || empty($kecamatan) || empty($desa) || empty($alamat)) {
+      echo "<div class='alert alert-danger mt-3'>Semua field wajib diisi!</div>";
+    } else {
+      $sql = "INSERT INTO users (id, email, password, nama_lengkap, no_telp, provinsi, kabupaten, kecamatan, desa, alamat)
+              VALUES ('','$email', '$password', '$nama', '$no_handphone', '$provinsi', '$kabupaten', '$kecamatan', '$desa' , '$alamat')";
+    
+      if (mysqli_query($connect, $sql)) {
+        header('location:index.php');
+      } else {
+        echo "<div class='alert alert-danger mt-3'>Gagal menyimpan data: " . mysqli_error($connect) . "</div>";
+      }
+    }
+    ?>
   </body>
 </html>

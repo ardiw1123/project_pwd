@@ -8,7 +8,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Halaman Utama</title>
     <!-- styling -->
     <link rel="stylesheet" href="style.css" />
     <!-- icons -->
@@ -36,7 +36,7 @@
       </div>
 
       <div class="navbar-ekstra">
-        <a href="#login" id="user"> <i data-feather="user"></i></a>
+        <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
         <a href="#popup1"><i data-feather="shopping-cart"></i></a>
         <div id="popup1" class="overlay">
           <div class="popup">

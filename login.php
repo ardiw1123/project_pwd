@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,21 +21,32 @@
     <div class="login-user">
       <h2>Silahkan Login</h2>
       <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-
-                $result = mysqli_query($connect, "SELECT * FROM user WHERE username='$username'");
-                $user = mysqli_fetch_assoc($result);
-
-            if ($user && $password == $user['password']) {
-                $_SESSION['username'] = $username;
-                header("Location: index.php");
-            } else {
-                echo "<p>Login gagal! Username atau Password salah</p>";
-            }
-            }?>
-      <form class="form-login" action="" method="post">
+      if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
+        header('location:index.php');
+        exit();
+      }
+      if(isset($_POST['login'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $query = "SELECT * FROM users WHERE email = '$email' AND password = '$password' ";
+        $result = mysqli_query($connect, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user = mysqli_fetch_assoc($result);
+            $_SESSION['email'] = $email;
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['is_login'] = true;
+            header('location:index.php');
+            exit();
+          }else {
+            header('location:login.php?pesan=gagal'); 
+            exit();
+          }
+        }
+        if(isset($_GET['pesan']) && $_GET['pesan'] == 'gagal'){
+          echo "<div class='alert alert-danger mt-3'>Email atau Password salah!</div>";
+        }
+            ?>
+      <form class="form-login" action="login.php" method="POST">
         <div class="input-grup">
           <input
             type="text"
@@ -61,7 +70,7 @@
         <button type="submit" class="login" name="login">Login</button>
       </form>
       <p>Belum punya akun?</p>
-      <a href="regist.html">Daftar Disini</a>
+      <a href="regist.php">Daftar Disini</a>
     </div>
   </body>
 </html>
