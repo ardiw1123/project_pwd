@@ -48,6 +48,25 @@
     </nav>
     <!-- navbar end -->
 
+    <?php
+    include "connect.php";
+    if(!isset($connect) || $connect->connect_error) die("Koneksi database gagal.");
+    $idKategori = 3;
+    $sql = "SELECT * FROM product WHERE idKategori=?";
+    $result = $connect->prepare($sql);
+    $products = [];
+    if($result){
+      $result->bind_param("i", $idKategori);
+      $result->execute();
+      $data=$result->get_result();
+      if($data->num_rows > 0){
+        while($row=$data->fetch_assoc()){
+          $products[] = $row;
+        }
+      }
+      $result->close();
+    }
+    ?>
     <section id="kategori" class="kategori">
       <h2>Serum</h2>
       <p>
@@ -55,27 +74,25 @@
         eos.
       </p>
       <div class="row">
-        <div class="kategori-card">
-          <img src="./assets/serum/serum1.jpg" alt="serum" class="kategori-image" />
-          <h3 class="merek-kategori">Serum 1</h3>
-          <p class="price">IDR 70k</p>
-        </div>
-        <div class="kategori-card">
-          <img src="./assets/serum/serum2.jpg" alt="serum" class="kategori-image" />
-          <h3 class="merek-kategori">Serum 2</h3>
-          <p class="price">IDR 70k</p>
-        </div>
-        <div class="kategori-card">
-          <img src="./assets/serum/serum3.jpg" alt="serum" class="kategori-image" />
-          <h3 class="merek-kategori">Serum 3</h3>
-          <p class="price">IDR 70k</p>
-        </div>
-        <div class="kategori-card">
-          <img src="./assets/serum/serum4.jpg" alt="serum" class="kategori-image" />
-          <h3 class="merek-kategori">Serum 4</h3>
-          <p class="price">IDR 70k</p>
-        </div>
-      </div>
+        <?php
+        if (!empty($products)) {
+            foreach ($products as $product) {
+        ?>
+                <div class="kategori-card">
+                    <img
+                        src="<?php echo htmlspecialchars($product['file_path']); ?>"
+                        alt="<?php echo htmlspecialchars($product['nama_product']); ?>"
+                        class="kategori-image"
+                    />
+                    <h3 class="merek-kategori"><?php echo htmlspecialchars($product['nama_product']); ?></h3>
+                    <p class="price">IDR <?php echo number_format($product['harga'], 0, ',', '.'); ?></p> <a href="product_detail.php?id=<?php echo htmlspecialchars($product['id_product']); ?>">Lihat Selengkapnya</a>
+                </div>
+                <?php
+            }
+        } else {
+            echo "<p>Belum ada produk dalam kategori ini.</p>";
+        }
+        ?>
     </section>
     <script>
       feather.replace();
