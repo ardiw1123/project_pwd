@@ -21,11 +21,11 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--option);
   color: #010101;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; */
   min-height: 100vh;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .navbar {
@@ -87,17 +87,13 @@ body {
 }
 
 .main {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   align-items: center;
   background-color: var(--option);
-  /* background-size: cover;
-  background-position: center; */
   position: relative;
   background-repeat: no-repeat;
-  padding-right: 0;
-  /* padding-top: 40px; */
-  /*padding-bottom: 30px; */
+  margin-bottom: 0;
 }
 
 .main .content {
@@ -126,14 +122,14 @@ body {
   align-self: stretch;
   margin-right: 0;
   padding-right: 0;
-  min-height: 400px;
-  clip-path: ellipse(100% 50% at 110% 50%);
+  /* min-height: 400px; */
+  clip-path: ellipse(80% 38% at 80% 37%);
 }
 
 .main .image-main {
   display: block;
-  width: 85%;
-  height: 85%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -203,8 +199,10 @@ body {
 }
 
 .products {
+  min-height: 100vh;
   padding: 4rem 2rem;
   text-align: center;
+  margin-top: 0;
 }
 
 .products h2 {
@@ -570,4 +568,72 @@ footer {
 .data-customer tr td:last-child {
   text-align: center;
   width: 100px;
+}
+
+/* Product Desc Start */
+.product-detail-section {
+  padding: 4rem 2rem;
+  background-color: var(--option);
+}
+.product-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.product-image-area {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.product-image-area img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-info-area {
+  flex: 2;
+  min-width: 300px;
+}
+
+.product-info-area h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.product-info-area p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.product-price {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff69b4;
+  margin-top: 1.5rem;
+}
+
+.add-to-cart-btn {
+  display: inline-block;
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #ff851c;
 }

@@ -26,16 +26,17 @@
     <nav class="navbar">
       <a href="#" class="logo">Nama <span>Brand</span>.</a>
       <div class="navbar-menu">
-        <a href="serum.html">Serum</a>
-        <a href="moisturizer.html">Moisturizer</a>
-        <a href="toner.html">Toner</a>
-        <a href="sunscreen.html">Sunscreen</a>
-        <a href="masker.html">Masker</a>
-        <a href="cleanser.html">Cleanser</a>
-        <a href="lip-care.html">Lip Care</a>
+        <a href="serum.php">Serum</a>
+        <a href="moisturizer.php">Moisturizer</a>
+        <a href="toner.php">Toner</a>
+        <a href="sunscreen.php">Sunscreen</a>
+        <a href="masker.php">Masker</a>
+        <a href="cleanser.php">Cleanser</a>
+        <a href="lip-care.php">Lip Care</a>
       </div>
 
       <div class="navbar-ekstra">
+        <a href="index.php" id="home"> <i data-feather="home"></i></a>
         <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
         <a href="#popup1"><i data-feather="shopping-cart"></i></a>
         <div id="popup1" class="overlay">

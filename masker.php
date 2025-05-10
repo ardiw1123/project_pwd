@@ -21,24 +21,34 @@
     <nav class="navbar">
       <a href="#" class="logo">Nama <span>Brand</span>.</a>
       <div class="navbar-menu">
-        <a href="serum.html">Serum</a>
-        <a href="moisturizer.html">Moisturizer</a>
-        <a href="toner.html">Toner</a>
-        <a href="sunscreen.html">Sunscreen</a>
-        <a href="masker.html">Masker</a>
-        <a href="cleanser.html">Cleanser</a>
-        <a href="lip-care.html">Lip Care</a>
+        <a href="serum.php">Serum</a>
+        <a href="moisturizer.php">Moisturizer</a>
+        <a href="toner.php">Toner</a>
+        <a href="sunscreen.php">Sunscreen</a>
+        <a href="masker.php">Masker</a>
+        <a href="cleanser.php">Cleanser</a>
+        <a href="lip-care.php">Lip Care</a>
       </div>
 
       <div class="navbar-ekstra">
-        <a href="#login" id="user"> <i data-feather="user"></i></a>
-        <a href="#" id="shopping-cart"> <i data-feather="shopping-cart"></i></a>
+        <a href="index.php" id="home"> <i data-feather="home"></i></a>
+        <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
+        <a href="#popup1"><i data-feather="shopping-cart"></i></a>
+        <div id="popup1" class="overlay">
+          <div class="popup">
+            <a class="close-icon" href="#">&times;</a>
+            <h2>Haloo Brandiess!</h2>
+            <p>Please do login first before check out yeaa!!</p>
+            <a class="login-btn" href="login.php">Lanjut ke Login</a>
+          </div>
+        </div>
+        <a href="#" id="shopping-cart"> </a>
+
       </div>
     </nav>
     <!-- navbar end -->
-
     <section id="kategori" class="kategori">
-      <h2>Toner</h2>
+      <h2>Mask</h2>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis,
         eos.
@@ -46,34 +56,38 @@
       <div class="row">
         <div class="kategori-card">
           <img
-            src="./assets/toner/toner4.jpeg"
+            src="./assets/mask/mask1.jpg"
             alt="serum"
             class="kategori-image"
           />
-          <h3 class="merek-kategori">Toner 1</h3>
+          <h3 class="merek-kategori">Mask 1</h3>
           <p class="price">IDR 70k</p>
         </div>
         <div class="kategori-card">
           <img
-            src="./assets/toner/toner1.jpg"
+            src="./assets/mask/mask2.jpg"
             alt="serum"
             class="kategori-image"
           />
-          <h3 class="merek-kategori">Toner 2</h3>
+          <h3 class="merek-kategori">Mask 2</h3>
           <p class="price">IDR 70k</p>
         </div>
         <div class="kategori-card">
           <img
-            src="./assets/toner/toner2.jpg"
+            src="./assets/mask/mask3.jpg"
             alt="serum"
             class="kategori-image"
           />
-          <h3 class="merek-kategori">Toner 3</h3>
+          <h3 class="merek-kategori">Mask 3</h3>
           <p class="price">IDR 70k</p>
         </div>
         <div class="kategori-card">
-          <img src="./assets/toner/toner3.jpg" alt="serum" class="kategori-image" />
-          <h3 class="merek-kategori">Toner 4</h3>
+          <img
+            src="./assets/mask/mask4.jpg"
+            alt="serum"
+            class="kategori-image"
+          />
+          <h3 class="merek-kategori">Mask 4</h3>
           <p class="price">IDR 70k</p>
         </div>
       </div>
