@@ -755,3 +755,67 @@ footer {
   color: #d9534f; /* Warna merah untuk error */
   font-size: 1.2rem;
 }
+
+.cartpage body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffddcc;
+}
+.cartpage .cart-container {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffcccc;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.cartpage h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+.cartpage table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+.cartpage th, td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.cartpage th {
+  background-color: #febbcc;
+  color: #444;
+}
+.cartpage td img {
+  width: 60px;
+}
+.cartpage .cart-total {
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.cartpage .btn-checkout {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0;
+  padding: 12px 25px;
+  background-color: #ff689b;
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.cartpage .btn-checkout:hover {
+  background-color: #f05487;
+}
+.cartpage .hapus-btn {
+  color: #ff4d4d;
+  text-decoration: none;
+}
+.cartpage .hapus-btn:hover {
+  text-decoration: underline;
+}

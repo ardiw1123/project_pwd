@@ -105,7 +105,39 @@ if ($product_id) {
                          <span class="product-price">IDR <?php echo number_format($product_data['harga'], 0, ',', '.'); ?>,00</span>
                     <?php endif; ?>
 
-                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <!-- <button class="add-to-cart-btn">Add to Cart</button>
+                    <div id="form-jumlah">
+                        <form method="post" action="tambah_keranjang.php">
+                    <input type="hidden" name="nama" value="?php echo htmlspecialchars($product_data['nama_product']); ?>">
+                    <input type="hidden" name="harga" value="?php echo htmlspecialchars($product_data['harga']); ?>">
+                    Jumlah: <input type="number" name="jumlah" value="1" min="1" style="width: 50px;">
+                   <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                    </form>
+                    </div> -->
+                    <!-- Tombol untuk nampilkan form -->
+                    <style>
+                        .jumlah-popup {
+                            margin-top: 20px;
+                            background-color: #fff0f5;
+                            padding: 20px;
+                            border-radius: 12px;
+                            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+                            text-align: center;
+                        }
+                    </style>
+
+                    <button class="add-to-cart-btn" onclick="showForm()">Add to Cart</button>
+                    <div id="form-jumlah" class="jumlah-popup" style="display: none;">
+                        <form method="post" action="addcart.php">
+                            <input type="hidden" name="nama" value="<?= htmlspecialchars($product_data['nama_product']); ?>">
+                            <input type="hidden" name="harga" value="<?= htmlspecialchars($product_data['harga']); ?>">
+                            <label for="jumlah">Quantity: </label>
+                            <input type="number" name="jumlah" value="1" min="1" required style="width: 25px;">
+                            <br><br>
+                        <button type="submit">Add to Cart</button>
+                        <button type="button" onclick="hideForm()">Cancel</button>
+                        </form>
+                    </div>
 
                 </div>
             <?php else : ?>
@@ -130,6 +162,14 @@ if ($product_id) {
      </footer>
     <script>
       feather.replace();
+    </script>
+    <script>
+    function showForm() {
+        document.getElementById('form-jumlah').style.display = 'block';
+    }
+    function hideForm() {
+        document.getElementById('form-jumlah').style.display = 'none';
+    }
     </script>
      </body>
 </html>
