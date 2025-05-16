@@ -641,123 +641,96 @@ footer {
 
 /* Start */
 
-/* CSS untuk Bagian Detail Produk (Tambahkan ke style.css kamu) */
-
 .product-detail-section {
-  padding: 4rem 2rem; /* Padding di sekeliling section detail produk */
-  background-color: var(
-    --option
-  ); /* Menggunakan warna background yang sama dengan main section */
-  /* Jika kamu hapus min-height dari main section, mungkin perlu sesuaikan padding top/bottom di sini */
-  /* Atau pastikan elemen sebelum ini (navbar) tidak menutupi */
-  margin-top: 0; /* Pastikan tidak ada margin di atas jika navbar fixed */
-  padding-top: 6rem; /* Beri padding di atas jika navbar fixed agar konten tidak tertutup */
+  padding: 4rem 2rem;
+  background-color: var(--option);
+  margin-top: 0;
+  padding-top: 6rem;
 }
 
 .product-detail-container {
-  display: flex; /* Menggunakan Flexbox untuk menata gambar dan info secara berdampingan */
-  flex-wrap: wrap; /* Agar layout menjadi satu kolom di layar kecil */
-  gap: 2rem; /* Jarak antara gambar dan info produk */
-  max-width: 1200px; /* Lebar maksimum container, opsional */
-  margin: 0 auto; /* Memposisikan container di tengah, opsional */
-  align-items: flex-start; /* Konten di dalam flex container rata atas */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
 }
 
 .product-image-area {
-  flex: 1; /* Mengambil 1 bagian proporsi ruang yang tersedia */
-  min-width: 300px; /* Lebar minimum area gambar sebelum wrapping */
-  text-align: center; /* Memusatkan gambar jika ukurannya lebih kecil */
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
 }
 
 .product-image-area img {
-  max-width: 100%; /* Gambar akan menyesuaikan lebar container-nya (agar responsif) */
-  height: auto; /* Menjaga rasio aspek gambar */
-  border-radius: 10px; /* Sudut melengkung pada gambar, opsional */
-  display: block; /* Penting agar margin auto atau text-align center bekerja di image-area */
-  margin: 0 auto; /* Memusatkan gambar di dalam area-nya */
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
 }
 
 .product-info-area {
-  flex: 2; /* Mengambil 2 bagian proporsi ruang yang tersedia (lebih lebar dari gambar) */
-  min-width: 300px; /* Lebar minimum area info sebelum wrapping */
-  /* Tambahkan padding di sini jika perlu jarak di dalam area info */
+  flex: 2;
+  min-width: 300px;
 }
 
 .product-info-area h2 {
-  font-size: 2.5rem; /* Ukuran font untuk nama produk */
-  margin-bottom: 1rem; /* Jarak di bawah nama produk */
-  color: #333; /* Warna teks nama produk */
-}
-
-.product-info-area p {
-  font-size: 1.1rem; /* Ukuran font untuk deskripsi produk */
-  line-height: 1.6; /* Jarak antar baris deskripsi */
-  color: #555; /* Warna teks deskripsi produk */
-  margin-bottom: 1rem; /* Jarak bawah paragraf deskripsi */
-}
-
-/* Styling untuk sub-judul (Manfaat, Hero Ingredients, Cara penggunaan) */
-.product-info-area h3 {
-  font-size: 1.5rem;
-  margin-top: 1.5rem; /* Jarak di atas sub-judul */
-  margin-bottom: 0.8rem; /* Jarak di bawah sub-judul */
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   color: #333;
 }
 
-/* Styling untuk daftar (jika kamu memilih menampilkan Manfaat/Hero Ingredients sebagai list HTML) */
-/*
-.product-info-area ul,
-.product-info-area ol {
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
+.product-info-area p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
 }
-.product-info-area ul li,
-.product-info-area ol li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-    color: #555;
-}
-*/
 
-/* Styling untuk Harga */
+.product-info-area h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
 .product-price {
-  display: block; /* Membuat harga di baris terpisah */
+  display: block;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #ff69b4; /* Warna harga, sesuaikan tema */
+  color: #ff69b4;
   margin-top: 1.5rem;
-  margin-bottom: 1.5rem; /* Jarak di bawah harga */
+  margin-bottom: 1.5rem;
 }
 
-/* Styling untuk Tombol Add to Cart */
 .add-to-cart-btn {
-  display: inline-block; /* Tombol akan berada di baris yang sama dengan elemen lain jika ada ruang */
-  background-color: #ff69b4; /* Warna latar belakang tombol (sesuaikan dengan tema pink kamu) */
-  color: white; /* Warna teks tombol */
-  padding: 10px 20px; /* Padding di dalam tombol (atas/bawah 10px, kiri/kanan 20px) */
-  border: none; /* Menghilangkan border default tombol */
-  border-radius: 5px; /* Membuat sudut tombol melengkung */
-  font-size: 1.1rem; /* Ukuran font teks tombol */
-  cursor: pointer; /* Mengubah kursor menjadi tangan saat diarahkan ke tombol */
-  margin-top: 1rem; /* Sesuaikan jarak di atas tombol */
-  transition: background-color 0.3s ease; /* Animasi halus saat hover */
+  display: inline-block;
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-/* Efek saat tombol dihover (kursor diarahkan) */
 .add-to-cart-btn:hover {
-  background-color: #ff851c; /* Ubah warna latar belakang saat dihover */
+  background-color: #ff851c;
 }
 
-/* Styling untuk pesan error jika produk tidak ditemukan */
 .error-message {
   text-align: center;
   padding: 2rem;
-  color: #d9534f; /* Warna merah untuk error */
+  color: #d9534f;
   font-size: 1.2rem;
 }
 
 .cartpage body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   background-color: #ffddcc;
@@ -768,7 +741,7 @@ footer {
   padding: 30px;
   background-color: #ffcccc;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 .cartpage h2 {
   text-align: center;
@@ -780,7 +753,8 @@ footer {
   border-collapse: collapse;
   margin-bottom: 30px;
 }
-.cartpage th, td {
+.cartpage th,
+td {
   padding: 15px;
   text-align: center;
   border-bottom: 1px solid #eee;
