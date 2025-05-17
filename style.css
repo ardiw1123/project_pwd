@@ -519,6 +519,7 @@ footer {
   width: 100%;
   text-align: center;
   color: #fff;
+  margin: 0 auto;
 }
 
 .customer h2 {
@@ -569,6 +570,7 @@ footer {
   text-align: center;
   width: 100px;
 }
+/* Data Customer end */
 
 /* Product Desc Start */
 .product-detail-section {
