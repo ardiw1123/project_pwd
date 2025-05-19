@@ -1,11 +1,10 @@
 <?php
 session_start();
-include 'connect.php';
-
-if (!isset($_SESSION['login'])) {
-    echo "<script>alert('Login dulu dong beb sebelum checkout!');</script>";
-    echo "<script>location='login.php';</script>";
-    exit;
+include "connect.php";
+session_start();
+if(!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {
+    header('location:login.php');
+    exit();
 }
 
 if (empty($_SESSION["cart"])) {
@@ -14,7 +13,7 @@ if (empty($_SESSION["cart"])) {
     exit;
 }
 
-$id_user = $_SESSION['login']['user_id'];
+$id_user = $_SESSION['is_login']['user_id'];
 $total = 0;
 
 foreach ($_SESSION["cart"] as $id_product => $jumlah) {

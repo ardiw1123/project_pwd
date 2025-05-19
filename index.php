@@ -70,17 +70,17 @@
     <section class="products">
       <h2>Our Products</h2>
       <div class="product-grid">
-        <a href="moisturizer.html" class="product-card">
+        <a href="moisturizer.php" class="product-card">
           <img src="assets/moist/moist2.jpg" />
           <h3>Moisturizer</h3>
           <p>Moist your skin, and feel healthy.</p>
         </a>
-        <a href="serum.html" class="product-card">
+        <a href="serum.php" class="product-card">
           <img src="assets/serum/serum4.jpg" />
           <h3>Serum</h3>
           <p>Long-wear, flawless finish all day.</p>
         </a>
-        <a href="toner.html" class="product-card">
+        <a href="toner.php" class="product-card">
           <img src="assets/toner/toner1.jpg" />
           <h3>Toner</h3>
           <p>Long-wear, flawless finish all day.</p>
