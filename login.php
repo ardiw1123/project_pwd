@@ -18,6 +18,36 @@
   session_start();
   include 'connect.php';
   ?>
+  <!-- navbar start -->
+    <nav class="navbar">
+      <a href="#" class="logo">Nama <span>Brand</span>.</a>
+      <div class="navbar-menu">
+        <a href="serum.php">Serum</a>
+        <a href="moisturizer.php">Moisturizer</a>
+        <a href="toner.php">Toner</a>
+        <a href="sunscreen.php">Sunscreen</a>
+        <a href="masker.php">Masker</a>
+        <a href="cleanser.php">Cleanser</a>
+        <a href="lip-care.php">Lip Care</a>
+      </div>
+
+      <div class="navbar-ekstra">
+        <a href="index.php" id="home"> <i data-feather="home"></i></a>
+        <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
+        <a href="#popup1"><i data-feather="shopping-cart"></i></a>
+        <div id="popup1" class="overlay">
+          <div class="popup">
+            <a class="close-icon" href="#">&times;</a>
+            <h2>Haloo Brandiess!</h2>
+            <p>Please do login first before check out yeaa!!</p>
+            <a class="login-btn" href="login.php">Lanjut ke Login</a>
+          </div>
+        </div>
+        <a href="#" id="shopping-cart"> </a>
+
+      </div>
+    </nav>
+    <!-- navbar end -->
     <div class="login-user">
       <h2>Silahkan Login</h2>
       <?php
