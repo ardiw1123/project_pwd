@@ -2,12 +2,14 @@
 session_start();
 
 // Ambil data produk dari form
+$id_prod = $_POST['id_product'];
 $nama = $_POST['nama'];
 $harga = $_POST['harga'];
 $jumlah = $_POST['jumlah'];
 
 // Format item baru
 $itemBaru = [
+    'id_product' => $id_prod,
     'nama' => $nama,
     'harga' => $harga,
     'jumlah' => $jumlah
@@ -17,6 +19,8 @@ $itemBaru = [
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
+
+
 
 // Cek kalau barang udah ada di keranjang, tambahin jumlah
 $found = false;

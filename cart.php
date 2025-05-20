@@ -1,9 +1,13 @@
 <?php
+include 'connect.php';
 session_start();
-// if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
-//     header('location:login.php');
-//     exit();
-// }
+if(!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {?>
+    <script>
+        alert('Kamu belum login! Silakan login dulu ya.')
+        window.location.href = 'login.php'
+    </script><?php
+    exit();
+}
 
 $keranjang = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $total = 0;
@@ -13,7 +17,7 @@ $total = 0;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Keranjang Belanja</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/feather-icons"></script>
     
@@ -54,6 +58,7 @@ $total = 0;
         </table>
 
         <br>
+        <a href="index.php">Back</a> 
         <a href="checkout.php">Checkout</a> 
     <?php endif; ?>
     </div>

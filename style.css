@@ -82,6 +82,25 @@ body {
   margin: 0 0.5rem;
 }
 
+/* .icon-cart span{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  background-color: #d80b0b;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -20%;
+}
+
+svg{
+  width: 30px;
+  margin: 0 0.5rem;
+} */
+
 .navbar .navbar-ekstra a:hover {
   color: var(--card);
 }
@@ -284,17 +303,17 @@ footer {
   color: #cc7188;
 }
 
-.login-btn {
+.klik-btn {
   margin-top: 20px;
   display: inline-block;
   padding: 10px 20px;
   background: #f06487;
-  color: rgb(214, 3, 3);
+  color: rgb(249, 245, 245);
   text-decoration: none;
   border-radius: 8px;
 }
 
-.login-btn:hover {
+.klik-btn:hover {
   background: #ffcccc;
 }
 

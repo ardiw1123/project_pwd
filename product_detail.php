@@ -48,7 +48,7 @@ if ($product_id) {
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-     <nav class="navbar">
+    <nav class="navbar">
         <a href="#" class="logo">Nama <span>Brand</span>.</a>
         <div class="navbar-menu">
             <a href="daftar_produk.php?kategori=serum">Serum</a>
@@ -60,19 +60,11 @@ if ($product_id) {
             <a href="daftar_produk.php?kategori=lip-care">Lip Care</a>
         </div>
         <div class="navbar-ekstra">
-             <a href="index.php" id="home"> <i data-feather="home"></i></a>
-             <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
-             <a href="#popup1"><i data-feather="shopping-cart"></i></a>
-             <div id="popup1" class="overlay">
-                <div class="popup">
-                    <a class="close-icon" href="#">&times;</a>
-                    <h2>Haloo Brandiess!</h2>
-                    <p>Please do login first before check out yeaa!!</p>
-                    <a class="login-btn" href="login.php">Lanjut ke Login</a>
-                </div>
-            </div>
+            <a href="index.php" id="home"> <i data-feather="home"></i></a>
+            <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
+            <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
         </div>
-     </nav>
+    </nav>
     <section class="product-detail-section">
         <div class="product-detail-container">
 
@@ -93,28 +85,18 @@ if ($product_id) {
 
                     <?php if (!empty($product_data['hero_ingredients'])) : ?>
                         <h3>Hero Ingredients:</h3>
-                         <p><?php echo nl2br(htmlspecialchars($product_data['hero_ingredients'])); ?></p>
+                        <p><?php echo nl2br(htmlspecialchars($product_data['hero_ingredients'])); ?></p>
                     <?php endif; ?>
 
-                     <?php if (!empty($product_data['cara_penggunaan'])) : ?>
+                    <?php if (!empty($product_data['cara_penggunaan'])) : ?>
                         <h3>Cara penggunaan:</h3>
-                         <p><?php echo nl2br(htmlspecialchars($product_data['cara_penggunaan'])); ?></p>
+                        <p><?php echo nl2br(htmlspecialchars($product_data['cara_penggunaan'])); ?></p>
                     <?php endif; ?>
 
                     <?php if (isset($product_data['harga'])) : ?>
-                         <span class="product-price">IDR <?php echo number_format($product_data['harga'], 0, ',', '.'); ?>,00</span>
+                        <span class="product-price">IDR <?php echo number_format($product_data['harga'], 0, ',', '.'); ?>,00</span>
                     <?php endif; ?>
 
-                    <!-- <button class="add-to-cart-btn">Add to Cart</button>
-                    <div id="form-jumlah">
-                        <form method="post" action="tambah_keranjang.php">
-                    <input type="hidden" name="nama" value="?php echo htmlspecialchars($product_data['nama_product']); ?>">
-                    <input type="hidden" name="harga" value="?php echo htmlspecialchars($product_data['harga']); ?>">
-                    Jumlah: <input type="number" name="jumlah" value="1" min="1" style="width: 50px;">
-                   <button type="submit" class="add-to-cart-btn">Add to Cart</button>
-                    </form>
-                    </div> -->
-                    <!-- Tombol untuk nampilkan form -->
                     <style>
                         .jumlah-popup {
                             margin-top: 20px;
@@ -129,6 +111,7 @@ if ($product_id) {
                     <button class="add-to-cart-btn" onclick="showForm()">Add to Cart</button>
                     <div id="form-jumlah" class="jumlah-popup" style="display: none;">
                         <form method="post" action="addcart.php">
+                            <input type="hidden" name="id_product" value="<?= htmlspecialchars($product_data['id_product']); ?>">
                             <input type="hidden" name="nama" value="<?= htmlspecialchars($product_data['nama_product']); ?>">
                             <input type="hidden" name="harga" value="<?= htmlspecialchars($product_data['harga']); ?>">
                             <label for="jumlah">Quantity: </label>

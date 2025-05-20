@@ -11,10 +11,6 @@ $kecamatan = $_POST['kecamatan'];
 $desa = $_POST['desa'];
 $alamat = $_POST['alamat'];
 }
-
-
-
-
 ?>
 
 
@@ -157,7 +153,7 @@ $alamat = $_POST['alamat'];
         <button type="submit" class="daftar" name="daftar">Daftar</button>
       </form>
       <p>Sudah punya akun?</p>
-      <a href="login.html">Login Disini</a>
+      <a href="login.php">Login Disini</a>
     </div>
     <?php 
     if (empty($email) || empty($password) || empty($nama) || empty($no_handphone) || empty($provinsi) || empty($kabupaten) || empty($kecamatan) || empty($desa) || empty($alamat)) {
@@ -165,7 +161,6 @@ $alamat = $_POST['alamat'];
     } else {
       $sql = "INSERT INTO users (id, email, password, nama_lengkap, no_telp, provinsi, kabupaten, kecamatan, desa, alamat)
               VALUES ('','$email', '$password', '$nama', '$no_handphone', '$provinsi', '$kabupaten', '$kecamatan', '$desa' , '$alamat')";
-    
       if (mysqli_query($connect, $sql)) {
         header('location:index.php');
       } else {

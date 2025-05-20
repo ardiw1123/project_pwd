@@ -1,8 +1,11 @@
 <?php
 include "connect.php";
 session_start();
-if(!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {
-    header('location:login.php');
+if(!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {?>
+    <script>
+        alert('Kamu belum login! Silakan login dulu ya.')
+        window.location.href = 'login.php'
+    </script><?php
     exit();
 }
 
@@ -75,6 +78,7 @@ $data = mysqli_fetch_assoc($result)
                 <td><a href="ubah_data.php">Ubah Data</a></td>
             </tr>
         </table>
+        <button onclick="window.location.href='logout.php'">Logout</button>
     </div>
 </body>
 </html>
