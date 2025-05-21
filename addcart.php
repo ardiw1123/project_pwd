@@ -20,8 +20,6 @@ if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-
-
 // Cek kalau barang udah ada di keranjang, tambahin jumlah
 $found = false;
 foreach ($_SESSION['cart'] as &$item) {

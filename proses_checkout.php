@@ -36,29 +36,6 @@ foreach ($cart as $item) {
         VALUES ('$order_id', '$id_produk', '$nama_produk', '$harga', '$jumlah', '$subtotal')");
 }
 
-// $data = "=== CHECKOUT ===\n";
-// $data .= "Username: $username\n";
-// $data .= "Tanggal: $tanggal\n";
-// $data .= "Barang:\n";
-
-// foreach ($cart as $item) {
-//     $id_prod = $item[0];
-//     $nama = $item[1];
-//     $harga = $item[2];
-//     $jumlah = $item[3];
-//     $subtotal = $harga * $jumlah;
-//     $total += $subtotal;
-
-//     $data .= "- [$id_prod] $nama | Harga: $harga | Jumlah: $jumlah | Subtotal: $subtotal\n";
-// }
-
-// $data .= "Total Belanja: Rp " . number_format($total, 0, ',', '.') . "\n";
-// $data .= "=========================\n\n";
-
-// // simpan ke file gatau perlu 
-// file_put_contents("DataCheckout.txt", $data, FILE_APPEND);
-
-// kosingin cart abis checkout
 unset($_SESSION['cart']);
 
 echo "<script>
