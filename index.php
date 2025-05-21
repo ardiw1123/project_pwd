@@ -24,7 +24,7 @@
   <body>
     <!-- navbar start -->
     <nav class="navbar">
-      <a href="#" class="logo">Nama <span>Brand</span>.</a>
+      <a href="#" class="logo">Clau <span>dy</span>.</a>
       <div class="navbar-menu">
         <a href="serum.php">Serum</a>
         <a href="moisturizer.php">Moisturizer</a>
@@ -61,11 +61,10 @@
     <!-- main section -->
     <section class="main" id="home">
       <div class="content">
-        <h1>Lorem, ipsum dolor.</h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-          veritatis enim amet dolores quod!
-        </p>
+        <h1>Timeless beauty begins with intentional care</h1>
+        <h3>
+          — discover formulas that nourish, protect, and celebrate your skin’s elegance."
+        </h3>
       </div>
       <div class="image">
         <img src="main-foto.jpg" alt="face-foto" class="image-main" />

@@ -754,13 +754,13 @@ footer {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #ffddcc;
+  background-color: #F3F3E0;
 }
 .cartpage .cart-container {
   max-width: 1000px;
   margin: 50px auto;
   padding: 30px;
-  background-color: #ffcccc;
+  background-color: #CBDCEB;
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
@@ -781,7 +781,7 @@ td {
   border-bottom: 1px solid #eee;
 }
 .cartpage th {
-  background-color: #febbcc;
+  background-color: #CBDCEB;
   color: #444;
 }
 .cartpage td img {

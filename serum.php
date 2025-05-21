@@ -19,7 +19,7 @@
   <body>
     <!-- navbar start -->
     <nav class="navbar">
-      <a href="#" class="logo">Nama <span>Brand</span>.</a>
+      <a href="#" class="logo">Clau <span>dy</span>.</a>
       <div class="navbar-menu">
         <a href="serum.php">Serum</a>
         <a href="moisturizer.php">Moisturizer</a>
