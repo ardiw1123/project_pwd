@@ -2,10 +2,10 @@
 session_start();
 include 'connect.php';
 
-$user_id = $_SESSION['is_login']; // ID user yang login
+$user = $_SESSION['user_id']; // ID user yang login
 
 // Ambil daftar order-nya
-$result_orders = mysqli_query($connect, "SELECT * FROM orders WHERE username = '$user_id' ORDER BY tanggal DESC");
+$result_orders = mysqli_query($connect, "SELECT * FROM orders WHERE username = '$user' ORDER BY tanggal DESC");
 
 while ($order = mysqli_fetch_assoc($result_orders)) {
     echo "<h3>Order ID: #" . $order['order_id'] . "</h3>";

@@ -113,6 +113,7 @@
 </html> -->
 
 <?php
+include 'connect.php';
 session_start();
 
 if (!isset($_SESSION['is_login'])) {
@@ -131,7 +132,7 @@ if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
     exit;
 }
 
-$username = $_SESSION['is_login'];
+$user = $_SESSION['user_id'];
 $cart = $_SESSION['cart'];
 ?>
 
@@ -152,7 +153,7 @@ $cart = $_SESSION['cart'];
 <h2>Halaman Checkout</h2>
 
 <h3>👤 Data Pembeli</h3>
-<p><strong>Username:</strong> <?= htmlspecialchars($username) ?></p>
+<p><strong>Username:</strong> <?= htmlspecialchars($user) ?></p>
 
 <h3>🛒 Barang yang Dibeli</h3>
 <table>
@@ -206,17 +207,12 @@ $cart = $_SESSION['cart'];
     echo "<tr><td colspan='5'>Keranjang masih kosong</td></tr>";
 }
 
-// echo "<pre>";
-// print_r($_SESSION['cart']);
-// echo "</pre>";
-// exit;
 ?>
 <tr>
     <td colspan="4" align="right"><strong>Total</strong></td>
     <td><strong>Rp <?= number_format($total, 0, ',', '.') ?></strong></td>
 </tr>
 
-<!-- Tombol untuk proses checkout -->
 <form action="proses_checkout.php" method="post">
     <input type="submit" value="Konfirmasi & Bayar" style="margin-top: 20px; padding: 10px;">
 </form>

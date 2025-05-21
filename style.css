@@ -8,10 +8,10 @@
 }
 
 :root {
-  --primary: #ffcccc;
-  --bg: #ffddcc;
-  --card: #febbcc;
-  --option: #ffddcc;
+  --primary: #608BC1;
+  --bg: #F3F3E0;
+  --card: #133E87;
+  --option: #CBDCEB;
 }
 html {
   scroll-behavior: smooth;
@@ -236,8 +236,8 @@ svg{
 }
 
 .product-card {
-  border: 1px solid #febbcc;
-  background-color: #ffe4e1;
+  border: 1px solid #608BC1;
+  background-color: #CBDCEB;
   color: #010101;
   padding: 1rem;
   border-radius: 10px;
@@ -246,7 +246,7 @@ svg{
 
 .product-card:hover {
   transform: translateY(-5px);
-  color: #f4a1b6;
+  color: #133E87;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -256,7 +256,7 @@ svg{
 }
 
 footer {
-  background-color: #ffcccc;
+  background-color: #608BC1;
   color: white;
   text-align: center;
   padding: 2rem;
@@ -360,7 +360,7 @@ footer {
 }
 
 .input-grup input:focus {
-  border-bottom-color: #ff69b4;
+  border-bottom-color: #133E87;
 }
 
 .input-grup label {
@@ -380,7 +380,7 @@ footer {
   top: -10px;
   left: 8px;
   font-size: 0.8rem;
-  color: #ff69b4;
+  color: #133E87;
   font-weight: 600;
 }
 
@@ -390,7 +390,7 @@ footer {
 .login {
   width: 100%;
   padding: 10px 15px;
-  background-color: #ff69b4;
+  background-color: #133E87;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -638,13 +638,13 @@ footer {
   display: block;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #ff69b4;
+  color: #608BC1;
   margin-top: 1.5rem;
 }
 
 .add-to-cart-btn {
   display: inline-block;
-  background-color: #ff69b4;
+  background-color: #608BC1;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -721,14 +721,14 @@ footer {
   display: block;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #ff69b4;
+  color: #608BC1;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .add-to-cart-btn {
   display: inline-block;
-  background-color: #ff69b4;
+  background-color: #608BC1;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -798,7 +798,7 @@ td {
   width: fit-content;
   margin: 20px auto 0;
   padding: 12px 25px;
-  background-color: #ff689b;
+  background-color: #608BC1;
   color: #fff;
   border-radius: 10px;
   text-decoration: none;
