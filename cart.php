@@ -9,7 +9,7 @@ if(!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {?>
     exit();
 }
 
-$keranjang = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $total = 0;
 ?>
 
@@ -17,15 +17,15 @@ $total = 0;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/feather-icons"></script>
-    
 </head>
 <body class="cartpage">
     <div class="cart-container">
         <h1>Your Cart🛒</h1>
-    <?php if (empty($keranjang)) : ?>
+    <?php if (empty($cart)) : ?>
         <p style="text-align: center;">Its Empty!</p>
         <a href="index.php">Go shopping!</a>
     <?php else : ?>
@@ -37,7 +37,7 @@ $total = 0;
                 <th>Total</th>
             </tr>
 
-            <?php foreach ($keranjang as $item) : ?>
+            <?php foreach ($cart as $item) : ?>
                 <tr>
                     <td><?php echo htmlspecialchars($item['nama']); ?></td>
                     <td>IDR <?php echo number_format($item['harga'], 0, ',', '.'); ?>,00</td>

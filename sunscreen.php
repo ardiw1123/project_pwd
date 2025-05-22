@@ -33,17 +33,7 @@
       <div class="navbar-ekstra">
         <a href="index.php" id="home"> <i data-feather="home"></i></a>
         <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
-        <a href="#popup1"><i data-feather="shopping-cart"></i></a>
-        <div id="popup1" class="overlay">
-          <div class="popup">
-            <a class="close-icon" href="#">&times;</a>
-            <h2>Haloo Brandiess!</h2>
-            <p>Please do login first before check out yeaa!!</p>
-            <a class="login-btn" href="login.php">Lanjut ke Login</a>
-          </div>
-        </div>
-        <a href="#" id="shopping-cart"> </a>
-
+        <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
       </div>
     </nav>
     <!-- navbar end -->

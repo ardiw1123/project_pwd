@@ -1,71 +1,87 @@
-<!-- ?php
-session_start();
-include 'connect.php';
-
-$user = $_SESSION['user_id']; // ID user yang login
-
-// Ambil daftar order-nya
-$result_orders = mysqli_query($connect, "SELECT * FROM orders WHERE username = '$user' ORDER BY tanggal DESC");
-
-while ($order = mysqli_fetch_assoc($result_orders)) {
-    echo "<h3>Order ID: #" . $order['order_id'] . "</h3>";
-    echo "<p>Tanggal: " . $order['tanggal'] . "</p>";
-    echo "<p>Total: Rp" . number_format($order['total'], 0, ',', '.') . "</p>";
-
-    $order_id = $order['order_id'];
-    $result_items = mysqli_query($connect, "SELECT * FROM order_items WHERE order_id = '$order_id'");
-
-    echo "<ul>";
-    while ($item = mysqli_fetch_assoc($result_items)) {
-        echo "<li>" . $item['nama_produk'] . " (" . $item['jumlah'] . "x) - Rp" . number_format($item['harga'] * $item['jumlah'], 0, ',', '.') . "</li>";
-    }
-    echo "</ul><hr>";
-}
-?> -->
-
 <?php
 session_start();
 include 'connect.php'; // file ini nyambungin ke database
 echo 'Email session: ' . $_SESSION['email'];
-// Cek apakah user udah login
-if (!isset($_SESSION['is_login'])) {
-    echo "Kamu harus login dulu, bestie!";
-    exit;
+
+//Debugging - check what's in session
+echo '<pre>Session contents: ';
+print_r($_SESSION);
+echo '</pre>';
+
+$order_id = $_SESSION['order_id'];
+// $user_id = $_SESSION['user_id'];
+// $username = $_SESSION['nama_lengkap'];
+
+if (!isset($_SESSION['order_id'])) {
+    die("Order ID tidak ditemukan dalam session");
 }
 
-$username = $_SESSION['email'];
+//ambil data order
+$order = mysqli_fetch_assoc(mysqli_query($connect, 
+    "SELECT o.*, u.nama_lengkap 
+    FROM orders o
+    JOIN users u ON o.id = u.id
+    WHERE o.order_id = '$order_id'"));
 
-// Ambil ID user berdasarkan username
-$queryUser = mysqli_query($connect, "SELECT id FROM users WHERE email = '$username'");
-$dataUser = mysqli_fetch_assoc($queryUser);
-$userId = $dataUser['id'];
+if (!$order) {
+    die("Pemesanan tidak ditemukan untuk order ID: $order_id");
+}
 
-// Ambil pesanan berdasarkan ID user
-$queryPesanan = mysqli_query($connect, "
-    SELECT orders.order_id as order_id, orders.tanggal, product.nama_product, order_items.jumlah, order_items.harga
-    FROM orders
-    JOIN order_items ON orders.order_id = order_items.order_id
-    JOIN product ON order_items.id_produk = product.id_product
-    WHERE orders.username = '$userId'
-    ORDER BY orders.tanggal DESC
-");
+//ambil detail order
+$detail = mysqli_query($connect, 
+    "SELECT oi.*, p.nama_product
+    FROM order_items oi
+    JOIN product p ON oi.id_product = p.id_product
+    WHERE oi.order_id = '$order_id'");
 
-echo "<h2>Pesanan Kamu, $username</h2>";
-
-if (mysqli_num_rows($queryPesanan) > 0) {
-    echo "<table border='1' cellpadding='10'>";
-    echo "<tr><th>ID Pesanan</th><th>Tanggal</th><th>Produk</th><th>Jumlah</th><th>Harga</th></tr>";
-    while ($row = mysqli_fetch_assoc($queryPesanan)) {
-        echo "<tr>";
-        echo "<td>{$row['order_id']}</td>";
-        echo "<td>{$row['tanggal']}</td>";
-        echo "<td>{$row['nama_product']}</td>";
-        echo "<td>{$row['jumlah']}</td>";
-        echo "<td>Rp " . number_format($row['harga'], 0, ',', '.') . "</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-} else {
-    echo "Belum ada pesanan yang kamu buat, yuk checkout dulu";
+if (!$detail) {
+    die("Detail query error: " . mysqli_error($connect));
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+</head>
+<body>
+    <div class="receipt">
+        <h1>Invoice</h1>
+        <p><strong>Order ID: </strong> <?= $order['order_id'] ?></p>
+        <p><strong>Tanggal: </strong> <?= date('d/m/Y H:i', strtotime($order['tanggal'] ?? 'now')) ?></p>
+        <p><strong>Pelanggan: </strong> <?= htmlspecialchars($order['nama_lengkap']) ?></p>
+        
+        <table>
+            <tr>
+                <th>Nama Produk</th>
+                <th>Harga</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+            </tr>
+            <?php while($row = mysqli_fetch_assoc($detail)) : ?>
+            <tr>
+                <td><?= htmlspecialchars($row['nama_product']) ?></td>
+                <td>Rp<?= number_format($row['harga'], 0, ',', '.') ?></td>
+                <td><?= $row['jumlah'] ?></td>
+                <td>Rp<?= number_format($row['subtotal'], 0, ',', '.') ?></td>
+            </tr>
+            <?php endwhile; ?>
+            <tr>
+                <td colspan="3" class="total">Total</td>
+                <td>Rp<?= number_format($order['total'], 0, ',', '.') ?></td>
+            </tr>
+        </table>
+        
+        <p style="text-align: center; margin-top: 30px;">
+            Terima kasih telah berbelanja!
+        </p>
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="index.php" class="btn">Kembali ke Beranda</a>
+            <button onclick="window.print()" class="btn">Cetak Struk</button>
+        </div>
+    </div>
+</body>
+</html>

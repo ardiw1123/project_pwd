@@ -49,15 +49,15 @@ if ($product_id) {
 </head>
 <body>
     <nav class="navbar">
-        <a href="#" class="logo">Nama <span>Brand</span>.</a>
+        <a href="#" class="logo">Clau <span>Dy</span>.</a>
         <div class="navbar-menu">
-            <a href="daftar_produk.php?kategori=serum">Serum</a>
-            <a href="daftar_produk.php?kategori=moisturizer">Moisturizer</a>
-            <a href="daftar_produk.php?kategori=toner">Toner</a>
-            <a href="daftar_produk.php?kategori=sunscreen">Sunscreen</a>
-            <a href="daftar_produk.php?kategori=masker">Masker</a>
-            <a href="daftar_produk.php?kategori=cleanser">Cleanser</a>
-            <a href="daftar_produk.php?kategori=lip-care">Lip Care</a>
+            <a href="serum.php?kategori=serum">Serum</a>
+            <a href="moist.php?kategori=moisturizer">Moisturizer</a>
+            <a href="toner.php?kategori=toner">Toner</a>
+            <a href="sunscreen.php?kategori=sunscreen">Sunscreen</a>
+            <a href="masker.php?kategori=masker">Masker</a>
+            <a href="cleanser.php?kategori=cleanser">Cleanser</a>
+            <a href="lip-care.php?kategori=lip-care">Lip Care</a>
         </div>
         <div class="navbar-ekstra">
             <a href="index.php" id="home"> <i data-feather="home"></i></a>
@@ -135,8 +135,8 @@ if ($product_id) {
     <?php
      ?>
      <footer>
-        <p>&copy; 2025 Nama Brand. All rights reserved.</p>
-        <p>Follow us on Instagram @blabla</p>
+        <p>&copy; 2025 Clau D. All rights reserved.</p>
+        <p>Follow us on Instagram @ClauDy</p>
         <div class="social-icons">
             <i data-feather="instagram"></i>
              <i data-feather="facebook"></i>

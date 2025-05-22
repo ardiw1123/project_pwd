@@ -13,13 +13,14 @@ if (!isset($_SESSION['is_login'])) {
 if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
     echo "<script>
         alert('Keranjang kosong beb!');
-        window.location.href = 'cart.php';
+        window.location.href = 'index.php';
     </script>";
     exit;
 }
 
-$user = $_SESSION['email'];
+$username = $_SESSION['email'];
 $cart = $_SESSION['cart'];
+
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +42,7 @@ $cart = $_SESSION['cart'];
 <h2>Halaman Checkout</h2>
 
 <h3>👤 Data Pembeli</h3>
-<p><strong>Username:</strong> <?= htmlspecialchars($user) ?></p>
+<p><strong>Username:</strong> <?= htmlspecialchars($username) ?></p>
 
 <h3>🛒 Barang yang Dibeli</h3>
 <table>

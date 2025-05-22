@@ -20,7 +20,7 @@
   ?>
   <!-- navbar start -->
     <nav class="navbar">
-      <a href="#" class="logo">Nama <span>Brand</span>.</a>
+      <a href="#" class="logo">Clau <span>Dy</span>.</a>
       <div class="navbar-menu">
         <a href="serum.php">Serum</a>
         <a href="moisturizer.php">Moisturizer</a>
@@ -52,10 +52,10 @@
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
+            $_SESSION['nama_lengkap'] = $username['nama_lengkap'];
             $_SESSION['email'] = $email;
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['is_login'] = true;
-            $_SESSION['username'] = $data['nama_lengkap']; 
             header('location:index.php');
             exit();
           }else {

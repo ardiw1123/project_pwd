@@ -39,21 +39,6 @@
         <a href="index.php" id="home"> <i data-feather="home"></i></a>
         <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
         <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
-            <!-- <div class="icon-cart">
-              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24">
-                <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-              </svg>
-              <span>0</span>
-            </div> -->
-        <!-- <div id="popup1" class="overlay">
-          <div class="popup">
-            <a class="close-icon" href="#">&times;</a>
-            <h2>Haloo Brandiess!</h2>
-            <p>Please do login first before check out yeaa!!</p>
-            <a class="login-btn" href="login.php">Lanjut ke Login</a>
-          </div>
-        </div>
-        <a href="" > </a> -->
       </div>
     </nav>
     <!-- navbar end -->
@@ -82,19 +67,19 @@
         <a href="serum.php" class="product-card">
           <img src="assets/serum/serum4.jpg" />
           <h3>Serum</h3>
-          <p>Long-wear, flawless finish all day.</p>
+          <p>Powerful Ingredients, Visible Results.</p>
         </a>
         <a href="toner.php" class="product-card">
           <img src="assets/toner/toner1.jpg" />
           <h3>Toner</h3>
-          <p>Long-wear, flawless finish all day.</p>
+          <p>Bright Skin, Light Mood.</p>
         </a>
       </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 Nama Brand. All rights reserved.</p>
-      <p>Follow us on Instagram @blabla</p>
+      <p>&copy; 2025 Clau Dy. All rights reserved.</p>
+      <p>Follow us on Instagram @ClauDy</p>
       <div class="social-icons">
         <i data-feather="instagram"></i>
         <i data-feather="facebook"></i>
@@ -106,6 +91,5 @@
     <script>
       feather.replace();
     </script>
-    <script src="app.js"></script>
   </body>
 </html>

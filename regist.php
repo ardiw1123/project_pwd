@@ -13,7 +13,6 @@ $alamat = $_POST['alamat'];
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,7 +34,7 @@ $alamat = $_POST['alamat'];
   <body>
     <!-- navbar start -->
     <nav class="navbar">
-      <a href="#" class="logo">Nama <span>Brand</span>.</a>
+      <a href="#" class="logo">Clau <span>Dy</span>.</a>
       <div class="navbar-menu">
         <a href="serum.php">Serum</a>
         <a href="moisturizer.php">Moisturizer</a>
@@ -49,23 +48,28 @@ $alamat = $_POST['alamat'];
       <div class="navbar-ekstra">
         <a href="index.php" id="home"> <i data-feather="home"></i></a>
         <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
-        <a href="#popup1"><i data-feather="shopping-cart"></i></a>
-        <div id="popup1" class="overlay">
-          <div class="popup">
-            <a class="close-icon" href="#">&times;</a>
-            <h2>Haloo Brandiess!</h2>
-            <p>Please do login first before check out yeaa!!</p>
-            <a class="login-btn" href="login.php">Lanjut ke Login</a>
-          </div>
-        </div>
-        <a href="#" id="shopping-cart"> </a>
+        <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
 
       </div>
     </nav>
     <!-- navbar end -->
     <div class="regist-user">
       <h2>Buat Akun</h2>
-      <form class="form-regist" action="regist.php" method="post">
+      <p>
+        <?php 
+          if (empty($email) || empty($password) || empty($nama) || empty($no_handphone) || empty($provinsi) || empty($kabupaten) || empty($kecamatan) || empty($desa) || empty($alamat)) {
+            echo "<div class='alert alert-danger mt-3'>Semua field wajib diisi!</div>";
+          } else {
+            $sql = "INSERT INTO users (id, email, password, nama_lengkap, no_telp, provinsi, kabupaten, kecamatan, desa, alamat)
+                    VALUES ('','$email', '$password', '$nama', '$no_handphone', '$provinsi', '$kabupaten', '$kecamatan', '$desa' , '$alamat')";
+            if (mysqli_query($connect, $sql)) {
+              header('location:regist.php');
+            } else {
+              echo "<div class='alert alert-danger mt-3'>Gagal menyimpan data: " . mysqli_error($connect) . "</div>";
+            }
+          }?>
+      </p>
+      <form class="form-regist" method="post">
         <div class="input-grup">
           <input
             type="text"
@@ -155,18 +159,16 @@ $alamat = $_POST['alamat'];
       <p>Sudah punya akun?</p>
       <a href="login.php">Login Disini</a>
     </div>
-    <?php 
-    if (empty($email) || empty($password) || empty($nama) || empty($no_handphone) || empty($provinsi) || empty($kabupaten) || empty($kecamatan) || empty($desa) || empty($alamat)) {
-      echo "<div class='alert alert-danger mt-3'>Semua field wajib diisi!</div>";
-    } else {
+    <!-- ?php
+      else {
       $sql = "INSERT INTO users (id, email, password, nama_lengkap, no_telp, provinsi, kabupaten, kecamatan, desa, alamat)
               VALUES ('','$email', '$password', '$nama', '$no_handphone', '$provinsi', '$kabupaten', '$kecamatan', '$desa' , '$alamat')";
       if (mysqli_query($connect, $sql)) {
-        header('location:index.php');
+        header('location:regist.php');
       } else {
         echo "<div class='alert alert-danger mt-3'>Gagal menyimpan data: " . mysqli_error($connect) . "</div>";
       }
     }
-    ?>
+    ?> -->
   </body>
 </html>
