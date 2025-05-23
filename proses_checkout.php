@@ -47,7 +47,7 @@ $_SESSION['order_id'] = $order_id;
 unset($_SESSION['cart']);
 
 echo "<script>
-    alert('Checkout berhasil! Terima kasih sudah belanja 💖');
-    window.location.href = 'ordered.php';
+    alert('Checkout berhasil! Terima kasih sudah belanja!');
+    window.location.href = 'struk.php';
 </script>";
 ?>

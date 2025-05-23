@@ -41,7 +41,7 @@ if ($product_id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $product_data ? htmlspecialchars($product_data['nama_product']) : 'Detail Produk'; ?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
@@ -96,18 +96,7 @@ if ($product_id) {
                     <?php if (isset($product_data['harga'])) : ?>
                         <span class="product-price">IDR <?php echo number_format($product_data['harga'], 0, ',', '.'); ?>,00</span>
                     <?php endif; ?>
-
-                    <style>
-                        .jumlah-popup {
-                            margin-top: 20px;
-                            background-color: #fff0f5;
-                            padding: 20px;
-                            border-radius: 12px;
-                            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-                            text-align: center;
-                        }
-                    </style>
-
+                    
                     <button class="add-to-cart-btn" onclick="showForm()">Add to Cart</button>
                     <div id="form-jumlah" class="jumlah-popup" style="display: none;">
                         <form method="post" action="addcart.php">
@@ -115,10 +104,12 @@ if ($product_id) {
                             <input type="hidden" name="nama" value="<?= htmlspecialchars($product_data['nama_product']); ?>">
                             <input type="hidden" name="harga" value="<?= htmlspecialchars($product_data['harga']); ?>">
                             <label for="jumlah">Quantity: </label>
-                            <input type="number" name="jumlah" value="1" min="1" required style="width: 25px;">
+                            <input type="number" name="jumlah" value="1" min="1" required class="input-quantity">
                             <br><br>
-                        <button type="submit">Add to Cart</button>
-                        <button type="button" onclick="hideForm()">Cancel</button>
+                        <div style="margin-top: 15px;">
+                            <button type="submit">Add to Cart</button>
+                            <button type="button" onclick="hideForm()">Cancel</button>
+                        </div>
                         </form>
                     </div>
 
@@ -131,11 +122,20 @@ if ($product_id) {
             <?php endif; ?>
 
         </div>
+
+        <script>
+            function showForm() {
+                document.getElementById('form-jumlah').style.display = 'block';
+            }
+            function hideForm() {
+                document.getElementById('form-jumlah').style.display = 'none';
+            }
+        </script>
     </section>
     <?php
      ?>
      <footer>
-        <p>&copy; 2025 Clau D. All rights reserved.</p>
+        <p>&copy; 2025 Clau Dy. All rights reserved.</p>
         <p>Follow us on Instagram @ClauDy</p>
         <div class="social-icons">
             <i data-feather="instagram"></i>
@@ -146,13 +146,6 @@ if ($product_id) {
     <script>
       feather.replace();
     </script>
-    <script>
-    function showForm() {
-        document.getElementById('form-jumlah').style.display = 'block';
-    }
-    function hideForm() {
-        document.getElementById('form-jumlah').style.display = 'none';
-    }
-    </script>
+    
      </body>
 </html>

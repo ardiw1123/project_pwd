@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,7 +34,7 @@
       <div class="navbar-ekstra">
         <a href="index.php" id="home"> <i data-feather="home"></i></a>
         <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
-        <a href="cart.php" id="shopping-cart">><i data-feather="shopping-cart"></i></a>
+        <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
       </div>
     </nav>
     <!-- navbar end -->
@@ -52,10 +52,16 @@
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
-            $_SESSION['nama_lengkap'] = $username['nama_lengkap'];
             $_SESSION['email'] = $email;
-            $_SESSION['user_id'] = $user['id'];
             $_SESSION['is_login'] = true;
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['nama'] = $user['nama_lengkap'];
+            $_SESSION['no_telp'] = $user['no_telp']; 
+            $_SESSION['alamat'] = $user['alamat'];   
+            $_SESSION['provinsi'] = $user['provinsi'];   
+            $_SESSION['kabupaten'] = $user['kabupaten'];   
+            $_SESSION['kecamatan'] = $user['kecamatan'];   
+            $_SESSION['desa'] = $user['desa'];   
             header('location:index.php');
             exit();
           }else {

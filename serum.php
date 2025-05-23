@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>serum</title>
     <!-- styling -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Fonts -->
@@ -57,71 +57,42 @@
       $result->close();
     }
     ?>
-    <section id="kategori" class="kategori">
-      <h2>Serum</h2>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis,
-        eos.
-      </p>
 
-      <div class="row">
-        <?php
-        if (!empty($products)) {
-            foreach ($products as $product) {
-        ?>
-                <div class="kategori-card">
-                    <img
-                        src="<?php echo htmlspecialchars($product['file_path']); ?>"
-                        alt="<?php echo htmlspecialchars($product['nama_product']); ?>"
-                        class="kategori-image"
-                    />
-                    <h3 class="merek-kategori"><?php echo htmlspecialchars($product['nama_product']); ?></h3>
-                    <p class="price">IDR <?php echo number_format($product['harga'], 0, ',', '.'); ?></p> 
-                    <a href="product_detail.php?id=hp <?php echo htmlspecialchars($product['id_product']); ?>">Lihat Selengkapnya</a>
-                </div>
-                <?php
-            }
-        } else {
-            echo "<p>Belum ada produk dalam kategori ini.</p>";
-        }
-        ?>
+    <section class="products">
+      <h2>Serum</h2>
+      <?php if (!empty($products)) { ?>
+        <div class="product-grid">
+          <?php foreach ($products as $product) { ?>
+            <div class="product-card">
+              <a href="product_detail.php?id=<?php echo htmlspecialchars($product['id_product']); ?>">
+                <img 
+                  src="<?php echo htmlspecialchars($product['file_path']); ?>"
+                  alt="<?php echo htmlspecialchars($product['nama_product']); ?>"
+                  class="kategori-image" 
+                />
+                <h3 class="merek-kategori"><?php echo htmlspecialchars($product['nama_product']); ?></h3>
+                <p class="price">IDR <?php echo number_format($product['harga'], 0, ',', '.'); ?></p> 
+              </a>
+            </div>
+          <?php } ?>
+        </div>
+      <?php } else { ?>
+        <p>Produk belum tersedia di kategori ini.</p>
+      <?php } ?>
     </section>
 
-    <!-- <section class="products">
-      <h2>Our Products</h2>
-      hp
-        if (!empty($products)) {
-            foreach ($products as $product) {
-        ?>
-      <div class="product-grid">
-        <a href="product_detail.php?id=hp echo htmlspecialchars($product['id_product']); ?>" class="product-card">
-          <img 
-          src="hp echo htmlspecialchars($product['file_path']); ?>"
-          alt="hp echo htmlspecialchars($product['nama_product']); ?>"
-          class="kategori-image" 
-          />
-          <h3 class="merek-kategori">hp echo htmlspecialchars($product['nama_product']); ?></h3>
-          <p class="price">IDR hp echo number_format($product['harga'], 0, ',', '.'); ?></p> 
-        </a>
-        <a href="serum.php" class="product-card">
-          <img src="assets/serum/serum4.jpg" />
-          <h3>Serum</h3>
-          <p>Powerful Ingredients, Visible Results.</p>
-        </a>
-        <a href="toner.php" class="product-card">
-          <img src="assets/toner/toner1.jpg" />
-          <h3>Toner</h3>
-          <p>Bright Skin, Light Mood.</p>
-        </a>
-      </div>
-      hp
-            }
-        } else {
-            echo "<p>Belum ada produk dalam kategori ini.</p>";
-        }
-        ?>
-    </section> -->
 
+    <footer>
+      <p>&copy; 2025 Clau Dy. All rights reserved.</p>
+      <p>Follow us on Instagram @ClauDy</p>
+      <div class="social-icons">
+        <i data-feather="instagram"></i>
+        <i data-feather="facebook"></i>
+        <i data-feather="twitter"></i>
+      </div>
+    </footer>
+
+    </section>
     <script>
       feather.replace();
     </script>

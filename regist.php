@@ -20,7 +20,7 @@ $alamat = $_POST['alamat'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Regist</title>
     <!-- styling -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Fonts -->
@@ -62,8 +62,11 @@ $alamat = $_POST['alamat'];
           } else {
             $sql = "INSERT INTO users (id, email, password, nama_lengkap, no_telp, provinsi, kabupaten, kecamatan, desa, alamat)
                     VALUES ('','$email', '$password', '$nama', '$no_handphone', '$provinsi', '$kabupaten', '$kecamatan', '$desa' , '$alamat')";
-            if (mysqli_query($connect, $sql)) {
-              header('location:regist.php');
+            if (mysqli_query($connect, $sql)) {?>
+              <script>
+                  alert('Registrasi Berhasil!')
+                  window.location.href = 'login.php'
+              </script><?php
             } else {
               echo "<div class='alert alert-danger mt-3'>Gagal menyimpan data: " . mysqli_error($connect) . "</div>";
             }
