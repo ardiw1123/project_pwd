@@ -9,7 +9,7 @@ if (!isset($_SESSION['is_login']) || !isset($_SESSION['cart'])) {
     </script>";
     exit;
 }
-$user = $_SESSION['email'];
+$user = $_SESSION['is_login'];
 
 //$username = $_SESSION['email'];
 $username = mysqli_real_escape_string($connect, $_SESSION['email']);
@@ -24,7 +24,7 @@ foreach ($cart as $item) {
     $total += $subtotal;
 }
 
-$insertOrder = mysqli_query($connect, "INSERT INTO orders (username, tanggal, total) VALUES ('$username', '$tanggal', '$total')");
+$insertOrder = mysqli_query($connect, "INSERT INTO orders (id, username, tanggal, total) VALUES ('$user', '$username', '$tanggal', '$total')");
 if (!$insertOrder) {
     die("Gagal menyimpan order: " . mysqli_error($connect));
 }

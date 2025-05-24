@@ -24,6 +24,15 @@ mysqli_stmt_execute($stmt);
 $order_result = mysqli_stmt_get_result($stmt);
 $order = mysqli_fetch_assoc($order_result);
 
+if (!$order) {
+    echo "<div class='struk-container' style='text-align: center; padding: 20px;'>";
+    echo "<h1>Tidak ada riwayat transaksi ditemukan.</h1>";
+    echo "<p>Silakan lakukan pembelian terlebih dahulu.</p>";
+    echo "<a href='index.php' class='print-btn'>Kembali ke Beranda</a>";
+    echo "</div>";
+    exit();
+}
+
 // Ambil detail items
 $items_query = "SELECT p.nama_product, oi.harga, oi.jumlah, oi.subtotal 
                 FROM order_items oi 
@@ -161,7 +170,7 @@ $customer_data = $result_customer->fetch_assoc();
         <div class="struk-detail">
             <div class="detail-row">
                 <span>No. Transaksi:</span>
-                <span>#<?= $order['order_id'] ?></span>
+                <span><?= $order['order_id'] ?></span>
             </div>
             <div class="detail-row">
                 <span>Tanggal:</span>
