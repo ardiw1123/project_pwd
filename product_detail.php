@@ -2,7 +2,7 @@
 session_start();
 
 include 'connect.php';
-
+ 
 $product_id = null;
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $product_id = $_GET['id'];
