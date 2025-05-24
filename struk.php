@@ -60,102 +60,7 @@ $customer_data = $result_customer->fetch_assoc();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Struk Pembelian</title>
-    <style>
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: #f5f5f5;
-        }
-        .struk-container {
-            width: 300px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 15px;
-            border-bottom: 1px dashed #000;
-            padding-bottom: 10px;
-        }
-        .store-name {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .store-address {
-            font-size: 12px;
-        }
-        .struk-title {
-            text-align: center;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-        .struk-detail {
-            margin: 15px 0;
-            font-size: 14px;
-        }
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-        }
-        .items-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-            font-size: 14px;
-        }
-        .items-table th {
-            text-align: left;
-            border-bottom: 1px dashed #000;
-            padding: 5px 0;
-        }
-        .items-table td {
-            padding: 5px 0;
-            border-bottom: 1px dashed #ddd;
-        }
-        .total-section {
-            margin-top: 15px;
-            border-top: 1px dashed #000;
-            padding-top: 10px;
-            font-weight: bold;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 12px;
-            border-top: 1px dashed #000;
-            padding-top: 10px;
-        }
-        .print-btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            margin-top: 20px;
-            background: #4285f4;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            .struk-container, .struk-container * {
-                visibility: visible;
-            }
-            .struk-container {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                box-shadow: none;
-            }
-            .print-btn {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/struk.css">
 </head>
 <body>
     <div class="struk-container">
@@ -176,10 +81,6 @@ $customer_data = $result_customer->fetch_assoc();
                 <span>Tanggal:</span>
                 <span><?= date('d/m/Y H:i', strtotime($order['tanggal'])) ?></span>
             </div>
-            <div class="detail-row">
-                <span>Kasir:</span>
-                <span>Online Store</span>
-            </div>
         </div>
         
         <div class="struk-detail">
@@ -192,7 +93,7 @@ $customer_data = $result_customer->fetch_assoc();
                 <span><?= htmlspecialchars($customer_data['no_telp']) ?></span>
             </div>
             <div class="detail-row">
-                <span>Alamat:</span>
+                <span>Alamat: </span>
                 <span>
                     <?= htmlspecialchars(
                         $customer_data['alamat'] . ', ' . 

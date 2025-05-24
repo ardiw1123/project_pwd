@@ -162,16 +162,5 @@ $alamat = $_POST['alamat'];
       <p>Sudah punya akun?</p>
       <a href="login.php">Login Disini</a>
     </div>
-    <!-- ?php
-      else {
-      $sql = "INSERT INTO users (id, email, password, nama_lengkap, no_telp, provinsi, kabupaten, kecamatan, desa, alamat)
-              VALUES ('','$email', '$password', '$nama', '$no_handphone', '$provinsi', '$kabupaten', '$kecamatan', '$desa' , '$alamat')";
-      if (mysqli_query($connect, $sql)) {
-        header('location:regist.php');
-      } else {
-        echo "<div class='alert alert-danger mt-3'>Gagal menyimpan data: " . mysqli_error($connect) . "</div>";
-      }
-    }
-    ?> -->
   </body>
 </html>

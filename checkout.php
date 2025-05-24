@@ -22,11 +22,11 @@ $username = $_SESSION['email'];
 $cart = $_SESSION['cart'];
 
 // Ambil data lengkap customer dari database
-$sql_customer = "SELECT * FROM users WHERE email = ?";
-$stmt_customer = $connect->prepare($sql_customer);
-$stmt_customer->bind_param("s", $username);
-$stmt_customer->execute();
-$result_customer = $stmt_customer->get_result();
+$query = "SELECT * FROM users WHERE email = ?";
+$cust = $connect->prepare($query);
+$cust->bind_param("s", $username);
+$cust->execute();
+$result_customer = $cust->get_result();
 $customer_data = $result_customer->fetch_assoc();
 ?>
 
@@ -86,10 +86,10 @@ $customer_data = $result_customer->fetch_assoc();
                 $subtotal = $harga * $jumlah;
                 $total += $subtotal;
                 
-                // Dapatkan path gambar dari session atau query database
+                // Ambil path gambar dari session atau query database
                 $gambar = isset($item['file_path']) ? $item['file_path'] : '';
                 
-                // Jika tidak ada di session, query dari database
+                //Cek session, query dari database
                 if (empty($gambar)) {
                     $sql = "SELECT file_path FROM product WHERE id_product = ?";
                     $stmt = $connect->prepare($sql);
