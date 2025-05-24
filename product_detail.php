@@ -41,38 +41,30 @@ if ($product_id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $product_data ? htmlspecialchars($product_data['nama_product']) : 'Detail Produk'; ?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
-     <nav class="navbar">
-        <a href="#" class="logo">Nama <span>Brand</span>.</a>
+    <nav class="navbar">
+        <a href="#" class="logo">Clau <span>Dy</span>.</a>
         <div class="navbar-menu">
-            <a href="daftar_produk.php?kategori=serum">Serum</a>
-            <a href="daftar_produk.php?kategori=moisturizer">Moisturizer</a>
-            <a href="daftar_produk.php?kategori=toner">Toner</a>
-            <a href="daftar_produk.php?kategori=sunscreen">Sunscreen</a>
-            <a href="daftar_produk.php?kategori=masker">Masker</a>
-            <a href="daftar_produk.php?kategori=cleanser">Cleanser</a>
-            <a href="daftar_produk.php?kategori=lip-care">Lip Care</a>
+            <a href="serum.php?kategori=serum">Serum</a>
+            <a href="moist.php?kategori=moisturizer">Moisturizer</a>
+            <a href="toner.php?kategori=toner">Toner</a>
+            <a href="sunscreen.php?kategori=sunscreen">Sunscreen</a>
+            <a href="masker.php?kategori=masker">Masker</a>
+            <a href="cleanser.php?kategori=cleanser">Cleanser</a>
+            <a href="lip-care.php?kategori=lip-care">Lip Care</a>
         </div>
         <div class="navbar-ekstra">
-             <a href="index.php" id="home"> <i data-feather="home"></i></a>
-             <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
-             <a href="#popup1"><i data-feather="shopping-cart"></i></a>
-             <div id="popup1" class="overlay">
-                <div class="popup">
-                    <a class="close-icon" href="#">&times;</a>
-                    <h2>Haloo Brandiess!</h2>
-                    <p>Please do login first before check out yeaa!!</p>
-                    <a class="login-btn" href="login.php">Lanjut ke Login</a>
-                </div>
-            </div>
+            <a href="index.php" id="home"> <i data-feather="home"></i></a>
+            <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
+            <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
         </div>
-     </nav>
+    </nav>
     <section class="product-detail-section">
         <div class="product-detail-container">
 
@@ -93,49 +85,31 @@ if ($product_id) {
 
                     <?php if (!empty($product_data['hero_ingredients'])) : ?>
                         <h3>Hero Ingredients:</h3>
-                         <p><?php echo nl2br(htmlspecialchars($product_data['hero_ingredients'])); ?></p>
+                        <p><?php echo nl2br(htmlspecialchars($product_data['hero_ingredients'])); ?></p>
                     <?php endif; ?>
 
-                     <?php if (!empty($product_data['cara_penggunaan'])) : ?>
+                    <?php if (!empty($product_data['cara_penggunaan'])) : ?>
                         <h3>Cara penggunaan:</h3>
-                         <p><?php echo nl2br(htmlspecialchars($product_data['cara_penggunaan'])); ?></p>
+                        <p><?php echo nl2br(htmlspecialchars($product_data['cara_penggunaan'])); ?></p>
                     <?php endif; ?>
 
                     <?php if (isset($product_data['harga'])) : ?>
-                         <span class="product-price">IDR <?php echo number_format($product_data['harga'], 0, ',', '.'); ?>,00</span>
+                        <span class="product-price">IDR <?php echo number_format($product_data['harga'], 0, ',', '.'); ?>,00</span>
                     <?php endif; ?>
-
-                    <!-- <button class="add-to-cart-btn">Add to Cart</button>
-                    <div id="form-jumlah">
-                        <form method="post" action="tambah_keranjang.php">
-                    <input type="hidden" name="nama" value="?php echo htmlspecialchars($product_data['nama_product']); ?>">
-                    <input type="hidden" name="harga" value="?php echo htmlspecialchars($product_data['harga']); ?>">
-                    Jumlah: <input type="number" name="jumlah" value="1" min="1" style="width: 50px;">
-                   <button type="submit" class="add-to-cart-btn">Add to Cart</button>
-                    </form>
-                    </div> -->
-                    <!-- Tombol untuk nampilkan form -->
-                    <style>
-                        .jumlah-popup {
-                            margin-top: 20px;
-                            background-color: #fff0f5;
-                            padding: 20px;
-                            border-radius: 12px;
-                            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-                            text-align: center;
-                        }
-                    </style>
-
+                    
                     <button class="add-to-cart-btn" onclick="showForm()">Add to Cart</button>
                     <div id="form-jumlah" class="jumlah-popup" style="display: none;">
                         <form method="post" action="addcart.php">
+                            <input type="hidden" name="id_product" value="<?= htmlspecialchars($product_data['id_product']); ?>">
                             <input type="hidden" name="nama" value="<?= htmlspecialchars($product_data['nama_product']); ?>">
                             <input type="hidden" name="harga" value="<?= htmlspecialchars($product_data['harga']); ?>">
                             <label for="jumlah">Quantity: </label>
-                            <input type="number" name="jumlah" value="1" min="1" required style="width: 25px;">
+                            <input type="number" name="jumlah" value="1" min="1" required class="input-quantity">
                             <br><br>
-                        <button type="submit">Add to Cart</button>
-                        <button type="button" onclick="hideForm()">Cancel</button>
+                        <div style="margin-top: 15px;">
+                            <button type="submit">Add to Cart</button>
+                            <button type="button" onclick="hideForm()">Cancel</button>
+                        </div>
                         </form>
                     </div>
 
@@ -148,12 +122,21 @@ if ($product_id) {
             <?php endif; ?>
 
         </div>
+
+        <script>
+            function showForm() {
+                document.getElementById('form-jumlah').style.display = 'block';
+            }
+            function hideForm() {
+                document.getElementById('form-jumlah').style.display = 'none';
+            }
+        </script>
     </section>
     <?php
      ?>
      <footer>
-        <p>&copy; 2025 Nama Brand. All rights reserved.</p>
-        <p>Follow us on Instagram @blabla</p>
+        <p>&copy; 2025 Clau Dy. All rights reserved.</p>
+        <p>Follow us on Instagram @ClauDy</p>
         <div class="social-icons">
             <i data-feather="instagram"></i>
              <i data-feather="facebook"></i>
@@ -163,13 +146,6 @@ if ($product_id) {
     <script>
       feather.replace();
     </script>
-    <script>
-    function showForm() {
-        document.getElementById('form-jumlah').style.display = 'block';
-    }
-    function hideForm() {
-        document.getElementById('form-jumlah').style.display = 'none';
-    }
-    </script>
+    
      </body>
 </html>

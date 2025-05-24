@@ -1,8 +1,11 @@
 <?php
 include "connect.php";
 session_start();
-if(!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {
-    header('location:login.php');
+if(!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {?>
+    <script>
+        alert('Kamu belum login! Silakan login dulu ya.')
+        window.location.href = 'login.php'
+    </script><?php
     exit();
 }
 
@@ -19,7 +22,7 @@ $data = mysqli_fetch_assoc($result)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Customer</title>
     <!-- styling -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Fonts -->
@@ -31,50 +34,80 @@ $data = mysqli_fetch_assoc($result)
     />
 </head>
 <body>
+    <nav class="navbar">
+        <a href="#" class="logo">Clau <span>dy</span>.</a>
+        <div class="navbar-menu">
+            <a href="serum.php">Serum</a>
+            <a href="moisturizer.php">Moisturizer</a>
+            <a href="toner.php">Toner</a>
+            <a href="sunscreen.php">Sunscreen</a>
+            <a href="masker.php">Masker</a>
+            <a href="cleanser.php">Cleanser</a>
+            <a href="lip-care.php">Lip Care</a>
+        </div>
+        <div class="navbar-ekstra">
+            <a href="index.php" id="home"> <i data-feather="home"></i></a>
+            <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
+            <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        </div>
+    </nav>
+
     <div class="customer">
         <h2>Data Kamu Ada Disini!</h2>
         <table border="1" class="data-customer">
             <tr>
                 <td><strong>Email</strong></td>
                 <td><?=$data['email'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Nama Lengkap</strong></td>
                 <td><?=$data['nama_lengkap'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>No Handphone</strong></td>
                 <td><?=$data['no_telp'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Provinsi</strong></td>
                 <td><?=$data['provinsi'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Kabupaten</strong></td>
                 <td><?=$data['kabupaten'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Kecamatan</strong></td>
                 <td><?=$data['kecamatan'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Desa</strong></td>
                 <td><?=$data['desa'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Alamat Lengkap</strong></td>
                 <td><?=$data['alamat'];?></td>
-                <td><a href="ubah_data.php">Ubah Data</a></td>
+                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
         </table>
+        <button class="btn-e" onclick="window.location.href='logout.php'">Logout</button>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Clau Dy. All rights reserved.</p>
+        <p>Follow us on Instagram @ClauDy</p>
+        <div class="social-icons">
+            <i data-feather="instagram"></i>
+            <i data-feather="facebook"></i>
+            <i data-feather="twitter"></i>
+        </div>
+    </footer>
+    <script>feather.replace();</script>
 </body>
 </html>

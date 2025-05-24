@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2025 at 12:34 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 23 Bulan Mei 2025 pada 20.31
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,154 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Struktur dari tabel `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `id` int(11) NOT NULL,
+  `nama_kategori` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `kategori`
+--
+
+INSERT INTO `kategori` (`id`, `nama_kategori`) VALUES
+(1, 'cleanser'),
+(2, 'moisturizer'),
+(3, 'serum'),
+(4, 'toner'),
+(5, 'sunscreen'),
+(6, 'masker'),
+(7, 'lipcare');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_id` int(11) NOT NULL,
+  `id` int(11) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `tanggal` datetime DEFAULT NULL,
+  `total` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `id`, `username`, `tanggal`, `total`) VALUES
+(25, NULL, 'cl@gmail.com', '2025-05-21 20:06:46', 180000),
+(26, NULL, 'cl@gmail.com', '2025-05-21 20:07:33', 75000),
+(27, NULL, 'cl@gmail.com', '2025-05-21 20:08:36', 45000),
+(28, NULL, 'cl@gmail.com', '2025-05-21 20:22:38', 125000),
+(29, NULL, 'cl@gmail.com', '2025-05-21 20:23:04', 125000),
+(30, NULL, 'cl@gmail.com', '2025-05-22 15:49:09', 279000),
+(31, NULL, 'cl@gmail.com', '2025-05-22 16:04:06', 474000),
+(32, NULL, 'cl@gmail.com', '2025-05-22 16:10:51', 70000),
+(33, NULL, 'cl@gmail.com', '2025-05-22 20:10:00', 180000),
+(34, NULL, 'cl@gmail.com', '2025-05-22 20:12:25', 25000),
+(35, NULL, 'cl@gmail.com', '2025-05-22 21:21:35', 86000),
+(36, NULL, 'cl@gmail.com', '2025-05-22 21:22:43', 86000),
+(37, NULL, 'cl@gmail.com', '2025-05-22 21:23:54', 125000),
+(38, NULL, '', '2025-05-22 21:39:42', 70000),
+(39, NULL, '', '2025-05-22 22:07:21', 125000),
+(40, NULL, '', '2025-05-22 22:11:26', 70000),
+(41, NULL, '', '2025-05-22 22:18:12', 70000),
+(42, NULL, '', '2025-05-22 22:20:51', 155000),
+(43, NULL, '', '2025-05-22 22:46:10', 125000),
+(44, NULL, 'tata@gmail.com', '2025-05-22 22:50:50', 25000),
+(45, NULL, 'cl@gmail.com', '2025-05-23 16:30:30', 70000),
+(46, NULL, '', '2025-05-23 17:10:13', 280000),
+(47, NULL, '', '2025-05-23 17:11:18', 180000),
+(48, NULL, '', '2025-05-23 17:16:48', 170000),
+(49, NULL, 'cl@gmail.com', '2025-05-23 17:30:24', 75000),
+(50, NULL, 'cl@gmail.com', '2025-05-23 17:32:08', 205000),
+(51, NULL, '', '2025-05-23 17:37:15', 120000),
+(52, NULL, 'cl@gmail.com', '2025-05-23 17:39:23', 70000),
+(53, NULL, 'cl@gmail.com', '2025-05-23 17:43:37', 216000),
+(54, NULL, 'cl@gmail.com', '2025-05-23 17:45:45', 86000),
+(55, NULL, 'cl@gmail.com', '2025-05-23 17:52:30', 320000),
+(56, NULL, '', '2025-05-23 18:08:51', 45000),
+(57, NULL, '', '2025-05-23 18:10:00', 86000),
+(58, NULL, 'cl@gmail.com', '2025-05-23 18:15:38', 125000),
+(59, NULL, 'cl@gmail.com', '2025-05-23 18:31:15', 115000),
+(60, NULL, 'cl@gmail.com', '2025-05-23 18:33:45', 285000),
+(61, NULL, 'cl@gmail.com', '2025-05-23 19:30:08', 889000),
+(62, NULL, 'cl@gmail.com', '2025-05-23 19:48:10', 690000),
+(63, NULL, 'cl@gmail.com', '2025-05-23 20:00:55', 180000),
+(64, NULL, 'cl@gmail.com', '2025-05-23 20:01:46', 75000),
+(65, NULL, 'cl@gmail.com', '2025-05-23 20:03:06', 155000),
+(66, NULL, 'cl@gmail.com', '2025-05-23 20:21:40', 419000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `order_items`
+--
+
+CREATE TABLE `order_items` (
+  `item_id` int(11) NOT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `id_product` int(11) DEFAULT NULL,
+  `nama_produk` varchar(100) DEFAULT NULL,
+  `harga` int(11) DEFAULT NULL,
+  `jumlah` int(11) DEFAULT NULL,
+  `subtotal` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `order_items`
+--
+
+INSERT INTO `order_items` (`item_id`, `order_id`, `id_product`, `nama_produk`, `harga`, `jumlah`, `subtotal`) VALUES
+(26, 25, 15, 'GLYCOLIC ACID EXFOLIATING TONER', 90000, 2, 180000),
+(51, 47, 13, 'RETINOL ANTI-AGING NIGHT SERUM', 180000, 1, 180000),
+(52, 48, 11, 'TINTED LIP SERUM with Jojoba Oil', 60000, 1, 60000),
+(53, 48, 18, 'LIGHTWEIGHT DAILY SUNSCREEN SPF 50 PA+++', 110000, 1, 110000),
+(54, 49, 10, ' OVERNIGHT LIP SLEEPING MASK', 75000, 1, 75000),
+(55, 50, 17, 'PORE PURIFYING WITCH HAZEL TONER', 80000, 1, 80000),
+(56, 50, 6, 'HYALURONIC ACID HYDRATING CREAM', 125000, 1, 125000),
+(57, 51, 19, 'TONE-UP MINERAL SUNSCREEN SPF 30', 120000, 1, 120000),
+(58, 52, 16, 'HYDRATING ROSE WATER TONER', 70000, 1, 70000),
+(59, 53, 2, 'BRIGHTENING FOAMING CLEANSER with Vitamin C', 86000, 1, 86000),
+(60, 53, 22, 'HYDRATING MASK with Aloe Vera', 25000, 1, 25000),
+(61, 53, 20, 'MATTE FINISH SUNSCREEN GEL SPF 50', 105000, 1, 105000),
+(62, 54, 2, 'BRIGHTENING FOAMING CLEANSER with Vitamin C', 86000, 1, 86000),
+(63, 55, 3, 'GENTLE HYDRATING CLEANSING BALM', 115000, 1, 115000),
+(64, 55, 6, 'HYALURONIC ACID HYDRATING CREAM', 125000, 1, 125000),
+(65, 55, 17, 'PORE PURIFYING WITCH HAZEL TONER', 80000, 1, 80000),
+(66, 58, 9, 'HYDRATING LIP BALM SPF 15', 45000, 1, 45000),
+(67, 58, 17, 'PORE PURIFYING WITCH HAZEL TONER', 80000, 1, 80000),
+(68, 59, 3, 'GENTLE HYDRATING CLEANSING BALM', 115000, 1, 115000),
+(69, 60, 19, 'TONE-UP MINERAL SUNSCREEN SPF 30', 120000, 1, 120000),
+(70, 60, 15, 'GLYCOLIC ACID EXFOLIATING TONER', 90000, 1, 90000),
+(71, 60, 10, ' OVERNIGHT LIP SLEEPING MASK', 75000, 1, 75000),
+(72, 61, 22, 'HYDRATING MASK with Aloe Vera', 25000, 2, 50000),
+(73, 61, 19, 'TONE-UP MINERAL SUNSCREEN SPF 30', 120000, 2, 240000),
+(74, 61, 10, ' OVERNIGHT LIP SLEEPING MASK', 75000, 1, 75000),
+(75, 61, 14, 'PORES MINIMIZING & CLARIFYING SERUM', 140000, 1, 140000),
+(76, 61, 15, 'GLYCOLIC ACID EXFOLIATING TONER', 90000, 2, 180000),
+(77, 61, 5, '5X CERAMIDE LOW pH CLEANSER 80ML', 99000, 1, 99000),
+(78, 61, 20, 'MATTE FINISH SUNSCREEN GEL SPF 50', 105000, 1, 105000),
+(79, 62, 13, 'RETINOL ANTI-AGING NIGHT SERUM', 180000, 1, 180000),
+(80, 62, 16, 'HYDRATING ROSE WATER TONER', 70000, 4, 280000),
+(81, 62, 3, 'GENTLE HYDRATING CLEANSING BALM', 115000, 2, 230000),
+(82, 63, 13, 'RETINOL ANTI-AGING NIGHT SERUM', 180000, 1, 180000),
+(83, 64, 10, ' OVERNIGHT LIP SLEEPING MASK', 75000, 1, 75000),
+(84, 65, 12, 'VITAMIN C GLOWING SERUM', 155000, 1, 155000),
+(85, 66, 10, ' OVERNIGHT LIP SLEEPING MASK', 75000, 1, 75000),
+(86, 66, 7, 'NIACINAMIDE BRIGHTENING MOISTURIZER GEL\r\n\r\n', 135000, 1, 135000),
+(87, 66, 18, 'LIGHTWEIGHT DAILY SUNSCREEN SPF 50 PA+++', 110000, 1, 110000),
+(88, 66, 1, '3X ACID ACNE GEL CLEANSER', 99000, 1, 99000);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `product`
 --
 
 CREATE TABLE `product` (
@@ -42,7 +189,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `product`
+-- Dumping data untuk tabel `product`
 --
 
 INSERT INTO `product` (`id_product`, `nama_product`, `harga`, `idKategori`, `description`, `file_path`, `stok`, `size`, `manfaat`, `hero_ingredients`, `cara_penggunaan`) VALUES
@@ -52,7 +199,7 @@ INSERT INTO `product` (`id_product`, `nama_product`, `harga`, `idKategori`, `des
 (5, '5X CERAMIDE LOW pH CLEANSER 80ML', 99000, 1, 'Cleanser yang efektif membersihkan wajah dari debu dan kotoran dengan lembut tanpa membuat kulit terasa kencang. Mengandung 5 jenis ceramide yang menutrisi dan menjaga lapisan kulit. Kandungan Hyaluronic Acid membantu menjaga kelembaban kulit setelah dibilas.', './assets/cleanser/fw4.jpg', 4, '80ml', 'Membersihkan wajah dari debu dan kotoran\r\nMemiliki pH yang mendekati pH kulit wajah\r\nTidak membuat kulit terasa kencang', 'Ceramide: mengandung 5 jenis ceramide yang berbeda untuk menutrisi dan menjaga lapisan kulit.\r\nAsam amino: membantu membersihkan kulit.\r\nAsam hialuronat: mengembalikan dan mengunci kelembapan pada kulit.', '1. Basahi wajah dan ambil produk secukupnya.\r\n2. Pijatkan ke wajah dengan gerakan memutar.\r\n3. Bilas hingga bersih.'),
 (6, 'HYALURONIC ACID HYDRATING CREAM', 125000, 2, 'Pelembap dengan tekstur cream yang ringan dan cepat meresap, memberikan hidrasi intensif tanpa rasa lengket. Mengandung Triple Hyaluronic Acid Complex yang bekerja di berbagai lapisan kulit untuk menarik dan mengunci kelembapan. Diperkaya dengan Vitamin E sebagai antioksidan. Kulit terasa kenyal, halus, dan terhidrasi sepanjang hari. Cocok untuk semua jenis kulit, terutama kulit normal cenderung kering.', './assets/moist/moist1.jpg', 5, '50gr', 'Melembapkan kulit secara mendalam\r\nMenjaga kulit tetap kenyal dan halus\r\nTidak terasa lengket\r\nMengandung antioksidan', 'Triple Hyaluronic Acid: Menarik dan mengunci kelembapan di berbagai lapisan kulit\r\nVitamin E: Antioksidan', 'Aplikasikan secukupnya pada wajah dan leher setelah serum. Gunakan pagi dan malam hari.\r\n\r\n'),
 (7, 'NIACINAMIDE BRIGHTENING MOISTURIZER GEL\r\n\r\n', 135000, 2, 'Pelembap bertekstur gel yang segar dan ringan, ideal untuk kulit berminyak dan kombinasi. Diformulasikan dengan konsentrasi Niacinamide yang optimal untuk membantu mencerahkan kulit, menyamarkan noda hitam, dan mengontrol produksi minyak berlebih. Kandungan Panthenol dan Centella Asiatica membantu menenangkan kulit. Hasilnya, kulit tampak lebih cerah, pori-pori tersamarkan, dan produksi minyak lebih terkontrol.', './assets/moist/moist2.jpg', 5, '50ml', 'Mencerahkan kulit dan menyamarkan noda hitam\r\nMengontrol minyak berlebih dan menyamarkan pori\r\nMenenangkan kulit\r\nTekstur gel yang ringan dan cepat meresap', 'Niacinamide: Mencerahkan, mengontrol minyak, menyamarkan pori\r\nPanthenol: Melembapkan, menenangkan\r\nCentella Asiatica: Menenangkan, anti-inflamasi', 'Aplikasikan merata pada wajah dan leher setelah menggunakan serum. Gunakan pagi dan malam hari.'),
-(8, 'BARRIER REPAIR CERAMIDE CREAM', 145000, 2, 'Cream pelembap intensif yang diformulasikan khusus untuk memperbaiki dan memperkuat fungsi skin barrier yang rusak. Mengandung 5 jenis Ceramide esensial yang bekerja sinergis dengan Fatty Acid dan Cholesterol untuk mengembalikan lapisan lipid kulit. Teksturnya kaya namun mudah menyerap, memberikan perlindungan dan kelembapan tahan lama. Sangat direkomendasikan untuk kulit kering, sensitif, iritasi, atau setelah prosedur eksfoliasi/peeling.', './assets/moist/moist2.jpg', 5, '60gr', 'Memperbaiki dan memperkuat skin barrier\r\nMemberikan kelembapan mendalam dan tahan lama\r\nMenenangkan kulit kemerahan dan iritasi\r\nMengembalikan kesehatan kulit', '5x Ceramide Complex: Membangun kembali lapisan lipid kulit\r\nFatty Acid: Komponen esensial skin barrier\r\nCholesterol: Memperkuat struktur skin barrier', 'Aplikasikan pada wajah dan leher. Gunakan pagi dan malam hari, atau kapan pun kulit terasa kering dan membutuhkan kelembapan ekstra.'),
+(8, 'BARRIER REPAIR CERAMIDE CREAM', 145000, 2, 'Cream pelembap intensif yang diformulasikan khusus untuk memperbaiki dan memperkuat fungsi skin barrier yang rusak. Mengandung 5 jenis Ceramide esensial yang bekerja sinergis dengan Fatty Acid dan Cholesterol untuk mengembalikan lapisan lipid kulit. Teksturnya kaya namun mudah menyerap, memberikan perlindungan dan kelembapan tahan lama. Sangat direkomendasikan untuk kulit kering, sensitif, iritasi, atau setelah prosedur eksfoliasi/peeling.', './assets/moist/moist3.jpg', 5, '60gr', 'Memperbaiki dan memperkuat skin barrier\r\nMemberikan kelembapan mendalam dan tahan lama\r\nMenenangkan kulit kemerahan dan iritasi\r\nMengembalikan kesehatan kulit', '5x Ceramide Complex: Membangun kembali lapisan lipid kulit\r\nFatty Acid: Komponen esensial skin barrier\r\nCholesterol: Memperkuat struktur skin barrier', 'Aplikasikan pada wajah dan leher. Gunakan pagi dan malam hari, atau kapan pun kulit terasa kering dan membutuhkan kelembapan ekstra.'),
 (9, 'HYDRATING LIP BALM SPF 15', 45000, 7, 'Lip balm harian yang melembapkan bibir kering dan pecah-pecah, sekaligus memberikan perlindungan dari sinar UV dengan SPF 15. Diperkaya dengan Shea Butter dan Beeswax untuk menciptakan lapisan pelindung yang tahan lama. Bibir terasa lembut, halus, dan terlindungi dari kekeringan serta efek buruk matahari. Tersedia dalam beberapa varian aroma ringan.', './assets/lipcare/lip1.jpg', 5, '4gr', 'Melembapkan dan mencegah bibir kering\r\nMelindungi dari sinar matahari (UV)\r\nMembuat bibir terasa halus\r\nMemberikan rasa nyaman di bibir', 'Shea Butter: Melembapkan, melembutkan\r\nBeeswax: Membuat lapisan pelindung\r\nSPF 15: Perlindungan dari sinar UV', 'Aplikasikan pada bibir kapan saja saat dibutuhkan, terutama sebelum beraktivitas di luar ruangan.'),
 (10, ' OVERNIGHT LIP SLEEPING MASK', 75000, 7, 'Masker bibir yang digunakan semalaman untuk hidrasi intensif. Teksturnya seperti balm yang kental namun meleleh saat diaplikasikan. Mengandung campuran Berry Extract dan Vitamin C untuk menutrisi dan mencerahkan bibir kusam. Bangun tidur dengan bibir yang terasa sangat lembap, plump, dan bebas pecah-pecah.', './assets/lipcare/lip2.jpg', 4, '10gr', 'Melembapkan bibir secara intensif semalaman\r\nMenutrisi dan membantu mencerahkan bibir\r\nMembuat bibir terasa plump dan sehat\r\nMengatasi bibir kering dan pecah-pecah', 'Berry Mix Complex (Strawberry, Blueberry, Raspberry, etc.): Antioksidan, menutrisi\r\nVitamin C: Mencerahkan\r\nShea Butter: Melembapkan', 'Aplikasikan lapisan tebal pada bibir sebelum tidur. Biarkan semalaman dan bersihkan sisanya di pagi hari jika perlu.'),
 (11, 'TINTED LIP SERUM with Jojoba Oil', 60000, 7, 'Perpaduan antara lip serum yang menutrisi dan lip tint yang memberikan warna alami. Diformulasikan dengan Jojoba Oil dan Vitamin E untuk melembapkan dan merawat bibir. Memberikan sedikit warna yang fresh dan sehat, sekaligus menjaga bibir tetap lembap sepanjang hari. Tidak terasa berat atau lengket. Tersedia dalam beberapa pilihan shade.', './assets/lipcare/lip3.jpg', 4, '3ml', 'Melembapkan dan menutrisi bibir\r\nMemberikan warna alami dan segar\r\nTidak lengket atau terasa berat\r\nMerawat bibir agar lebih sehat', 'Jojoba Oil: Melembapkan, mirip sebum alami kulit\r\nVitamin E: Antioksidan, melembutkan\r\nNatural Pigments: Memberikan warna alami', 'Aplikasikan langsung pada bibir menggunakan aplikator. Dapat digunakan sendiri atau sebagai base sebelum lipstik.'),
@@ -69,36 +216,127 @@ INSERT INTO `product` (`id_product`, `nama_product`, `harga`, `idKategori`, `des
 (22, 'HYDRATING MASK with Aloe Vera', 25000, 6, 'Mask yang memberikan hidrasi dan rasa menenangkan seketika. Essence-nya kaya akan ekstrak Aloe Vera dan Hyaluronic Acid yang membantu melembapkan kulit kering, meredakan kemerahan, dan memberikan kesegaran. Material sheet mask yang lembut menempel sempurna di wajah untuk penyerapan essence yang optimal. Cocok untuk semua jenis kulit yang membutuhkan hidrasi cepat atau setelah terpapar sinar matahari.', './assets/mask/mask2.jpg', 5, '25ml', 'Melembapkan kulit secara cepat\r\nMeredakan kemerahan dan iritasi\r\nMemberikan rasa segar dan nyaman\r\nKulit terasa lebih plump', 'Aloe Vera Extract: Menenangkan, melembapkan\r\nHyaluronic Acid: Menarik dan mengunci kelembapan\r\nGlycerin: Humektan', 'Bersihkan wajah dan gunakan toner. Aplikasikan mask pada wajah, sesuaikan dengan kontur wajah. Biarkan selama 15-20 menit. Lepaskan mask dan tepuk-tepuk sisa essence hingga meresap.'),
 (23, 'OVERNIGHT RENEWAL SLEEPING MASK', 130000, 6, 'Masker wajah yang digunakan sebagai langkah terakhir perawatan di malam hari dan dibiarkan semalaman. Tekstur gel-cream yang ringan namun menutrisi, bekerja saat kamu tidur untuk merevitalisasi kulit. Mengandung Niacinamide untuk mencerahkan dan Ceramide untuk memperkuat barrier. Bangun dengan kulit yang terasa lebih kenyal, lembap, dan tampak lebih segar.', './assets/mask/mask3.jpg', 4, '80gr', 'Merevitalisasi kulit semalaman\r\nMemberikan hidrasi dan nutrisi\r\nMencerahkan tampilan kulit\r\nMembuat kulit terasa kenyal dan segar di pagi hari', 'Niacinamide: Mencerahkan, memperkuat barrier\r\nCeramide: Memperkuat barrier, menjaga kelembapan\r\nHyaluronic Acid: Melembapkan', 'Aplikasikan merata sebagai langkah terakhir skincare malam, ganti penggunaan pelembap. Biarkan semalaman. Bilas di pagi hari saat mencuci muka. Gunakan 2-3 kali seminggu.');
 
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `nama_lengkap` varchar(255) DEFAULT NULL,
+  `no_telp` varchar(25) DEFAULT NULL,
+  `provinsi` varchar(25) DEFAULT NULL,
+  `kabupaten` varchar(25) DEFAULT NULL,
+  `kecamatan` varchar(25) DEFAULT NULL,
+  `desa` varchar(25) DEFAULT NULL,
+  `alamat` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `nama_lengkap`, `no_telp`, `provinsi`, `kabupaten`, `kecamatan`, `desa`, `alamat`) VALUES
+(1, 'ardigunawanpratama@gmail.com', 'ardi123', 'Ardi Gunawan Pratama', '081222769057', 'DI Yogyakarta', 'Kab. Sleman', 'Depok', 'Caturtunggal', 'Janti'),
+(3, 'cl@gmail.com', '000', 'cleo', '088811112222', 'Prov. Jawa Barat', 'Kota Bekasi', 'Mustikajaya', 'Padurenan', 'Jl. Durian');
+
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `product`
+-- Indeks untuk tabel `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `fk_id` (`id`);
+
+--
+-- Indeks untuk tabel `order_items`
+--
+ALTER TABLE `order_items`
+  ADD PRIMARY KEY (`item_id`),
+  ADD KEY `fk_id_product` (`id_product`),
+  ADD KEY `fk_order_id` (`order_id`);
+
+--
+-- Indeks untuk tabel `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id_product`),
   ADD KEY `fk_idKategori` (`idKategori`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indeks untuk tabel `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT untuk tabel `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT untuk tabel `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
+--
+-- AUTO_INCREMENT untuk tabel `order_items`
+--
+ALTER TABLE `order_items`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+
+--
+-- AUTO_INCREMENT untuk tabel `product`
 --
 ALTER TABLE `product`
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT untuk tabel `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `product`
+-- Ketidakleluasaan untuk tabel `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `fk_id` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
+
+--
+-- Ketidakleluasaan untuk tabel `order_items`
+--
+ALTER TABLE `order_items`
+  ADD CONSTRAINT `fk_id_product` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`),
+  ADD CONSTRAINT `fk_order_id` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`);
+
+--
+-- Ketidakleluasaan untuk tabel `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `fk_idKategori` FOREIGN KEY (`idKategori`) REFERENCES `kategori` (`id`);
+  ADD CONSTRAINT `fk_idkategori` FOREIGN KEY (`idKategori`) REFERENCES `kategori` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

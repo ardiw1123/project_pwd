@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>serum</title>
     <!-- styling -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css">
     <!-- icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Fonts -->
@@ -19,7 +19,7 @@
   <body>
     <!-- navbar start -->
     <nav class="navbar">
-      <a href="#" class="logo">Nama <span>Brand</span>.</a>
+      <a href="#" class="logo">Clau <span>dy</span>.</a>
       <div class="navbar-menu">
         <a href="serum.php">Serum</a>
         <a href="moisturizer.php">Moisturizer</a>
@@ -33,17 +33,7 @@
       <div class="navbar-ekstra">
         <a href="index.php" id="home"> <i data-feather="home"></i></a>
         <a href="dataCustomer.php" id="user"> <i data-feather="user"></i></a>
-        <a href="#popup1"><i data-feather="shopping-cart"></i></a>
-        <div id="popup1" class="overlay">
-          <div class="popup">
-            <a class="close-icon" href="#">&times;</a>
-            <h2>Haloo Brandiess!</h2>
-            <p>Please do login first before check out yeaa!!</p>
-            <a class="login-btn" href="login.php">Lanjut ke Login</a>
-          </div>
-        </div>
-        <a href="#" id="shopping-cart"> </a>
-
+        <a href="cart.php" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
       </div>
     </nav>
     <!-- navbar end -->
@@ -67,33 +57,38 @@
       $result->close();
     }
     ?>
-    <section id="kategori" class="kategori">
+    <section class="products">
       <h2>Cleanser</h2>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis,
-        eos.
-      </p>
-      <div class="row">
-        <?php
-        if (!empty($products)) {
-            foreach ($products as $product) {
-        ?>
-                <div class="kategori-card">
-                    <img
-                        src="<?php echo htmlspecialchars($product['file_path']); ?>"
-                        alt="<?php echo htmlspecialchars($product['nama_product']); ?>"
-                        class="kategori-image"
-                    />
-                    <h3 class="merek-kategori"><?php echo htmlspecialchars($product['nama_product']); ?></h3>
-                    <p class="price">IDR <?php echo number_format($product['harga'], 0, ',', '.'); ?></p> <a href="product_detail.php?id=<?php echo htmlspecialchars($product['id_product']); ?>">Lihat Selengkapnya</a>
-                </div>
-                <?php
-            }
-        } else {
-            echo "<p>Belum ada produk dalam kategori ini.</p>";
-        }
-        ?>
+      <?php if (!empty($products)) { ?>
+        <div class="product-grid">
+          <?php foreach ($products as $product) { ?>
+            <div class="product-card">
+              <a href="product_detail.php?id=<?php echo htmlspecialchars($product['id_product']); ?>">
+                <img 
+                  src="<?php echo htmlspecialchars($product['file_path']); ?>"
+                  alt="<?php echo htmlspecialchars($product['nama_product']); ?>"
+                  class="kategori-image" 
+                />
+                <h3 class="merek-kategori"><?php echo htmlspecialchars($product['nama_product']); ?></h3>
+                <p class="price">IDR <?php echo number_format($product['harga'], 0, ',', '.'); ?></p> 
+              </a>
+            </div>
+          <?php } ?>
+        </div>
+      <?php } else { ?>
+        <p>Produk belum tersedia di kategori ini.</p>
+      <?php } ?>
     </section>
+
+    <footer>
+      <p>&copy; 2025 Clau Dy. All rights reserved.</p>
+      <p>Follow us on Instagram @ClauDy</p>
+      <div class="social-icons">
+        <i data-feather="instagram"></i>
+        <i data-feather="facebook"></i>
+        <i data-feather="twitter"></i>
+      </div>
+    </footer>
     <script>
       feather.replace();
     </script>
