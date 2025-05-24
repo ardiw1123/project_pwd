@@ -2,14 +2,6 @@
 include 'connect.php';
 session_start();
 
-if (!isset($_SESSION['is_login'])) {
-    echo "<script>
-        alert('⚠️ Login dulu ya!');
-        window.location.href = 'login.php';
-    </script>";
-    exit;
-}
-
 if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
     echo "<script>
         alert('Keranjang kosong beb!');
