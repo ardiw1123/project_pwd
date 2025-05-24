@@ -8,10 +8,10 @@
 }
 
 :root {
-  --primary: #608BC1;
-  --bg: #F3F3E0;
-  --card: #133E87;
-  --option: #CBDCEB;
+  --primary: #608bc1;
+  --bg: #f3f3e0;
+  --card: #133e87;
+  --option: #cbdceb;
 }
 html {
   scroll-behavior: smooth;
@@ -217,8 +217,6 @@ svg{
   color: #fff;
 } */
 
-
-
 .products {
   min-height: 100vh;
   max-width: 1200px;
@@ -241,8 +239,8 @@ svg{
 
 .product-card {
   display: block;
-  border: 1px solid #608BC1;
-  background-color: #CBDCEB;
+  border: 1px solid #608bc1;
+  background-color: #cbdceb;
   color: #010101;
   padding: 1rem;
   border-radius: 10px;
@@ -252,10 +250,9 @@ svg{
 .product-card:hover {
   /* transform: translateY(-5px); */
   transform: scale(1.05);
-  color: #608BC1;
+  color: #608bc1;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-
 
 .product-card a {
   display: block;
@@ -278,7 +275,7 @@ svg{
 }
 
 footer {
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   text-align: center;
   padding: 2rem;
@@ -382,7 +379,7 @@ footer {
 }
 
 .input-grup input:focus {
-  border-bottom-color: #133E87;
+  border-bottom-color: #133e87;
 }
 
 .input-grup label {
@@ -402,7 +399,7 @@ footer {
   top: -10px;
   left: 8px;
   font-size: 0.8rem;
-  color: #133E87;
+  color: #133e87;
   font-weight: 600;
 }
 
@@ -412,7 +409,7 @@ footer {
 .login {
   width: 100%;
   padding: 10px 15px;
-  background-color: #133E87;
+  background-color: #133e87;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -499,14 +496,14 @@ footer {
 }
 
 .input-grup textarea:focus {
-  border-bottom-color: #133E87;
+  border-bottom-color: #133e87;
 }
 .input-grup textarea:focus + label,
 .input-grup textarea:not(:placeholder-shown) + label {
   top: -10px;
   left: 8px;
   font-size: 0.8rem;
-  color: #133E87;
+  color: #133e87;
   font-weight: 600;
 }
 
@@ -517,7 +514,7 @@ footer {
 .daftar {
   width: 100%;
   padding: 10px 15px;
-  background-color: #133E87;
+  background-color: #133e87;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -564,7 +561,7 @@ footer {
   margin: 0 auto;
   margin: 50px auto 30px; /* Ditambahkan margin-top 100px (sesuaikan dengan tinggi navbar) */
   position: relative; /* Untuk memastikan z-index bekerja */
-  z-index: 1; 
+  z-index: 1;
 }
 
 .customer h2 {
@@ -572,15 +569,15 @@ footer {
   margin-bottom: 20px;
 }
 
-.customer .btn-e{
+.customer .btn-e {
   padding: 12px 30px;
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   border: none;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.2s;  
+  transition: all 0.2s;
 }
 
 .customer .btn-e:hover {
@@ -633,9 +630,9 @@ footer {
   width: 100px;
 }
 
-.data-customer .btn-e{
+.data-customer .btn-e {
   padding: 12px 30px;
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -698,14 +695,14 @@ footer {
   display: block;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #608BC1;
+  color: #608bc1;
   margin-top: 1.5rem;
 }
 
 /* add to cart product detail */
 .add-to-cart-btn {
   display: inline-block;
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -722,20 +719,20 @@ footer {
 
 .jumlah-popup {
   margin-top: 20px;
-  background-color:rgb(153, 184, 215);
+  background-color: rgb(153, 184, 215);
   /* #fff0f5; */
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: fit-content;
   max-width: 250px;
   margin-left: auto;
   margin-right: auto;
-  }
+}
 
 .jumlah-popup button[type="submit"] {
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   border: none;
   padding: 8px 15px;
@@ -746,7 +743,7 @@ footer {
 }
 
 .jumlah-popup button[type="submit"]:hover {
-  background-color: #133E87;
+  background-color: #133e87;
 }
 
 .jumlah-popup button[type="button"] {
@@ -842,14 +839,14 @@ footer {
   display: block;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #608BC1;
+  color: #608bc1;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .add-to-cart-btn {
   display: inline-block;
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -875,7 +872,7 @@ footer {
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #CBDCEB;
+  background-color: #cbdceb;
 }
 
 .cartpage .cart-container {
@@ -894,7 +891,7 @@ footer {
 .cartpage h2 {
   text-align: center;
   margin-bottom: 40px;
-  color: #133E87;
+  color: #133e87;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -909,7 +906,7 @@ footer {
 }
 
 .cartpage th {
-  background-color: #133E87;
+  background-color: #133e87;
   color: white;
   padding: 18px 15px;
   font-weight: 500;
@@ -931,7 +928,7 @@ footer {
 }
 
 .cartpage tr:hover td {
-  background-color: #CBDCEB;
+  background-color: #cbdceb;
 }
 
 .cartpage .product-name {
@@ -941,7 +938,8 @@ footer {
   padding-left: 20px;
 }
 
-.cartpage .price, .cartpage .total {
+.cartpage .price,
+.cartpage .total {
   font-weight: 500;
 }
 
@@ -1001,7 +999,7 @@ footer {
 
 .cartpage .btn-back {
   padding: 12px 30px;
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -1012,7 +1010,7 @@ footer {
 
 .cartpage .btn-checkout {
   padding: 12px 30px;
-  background-color: #608BC1;
+  background-color: #608bc1;
   color: white;
   border: none;
   border-radius: 8px;
