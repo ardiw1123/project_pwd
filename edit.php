@@ -144,7 +144,7 @@ $alamat = $_POST['alamat'];
         </div>
         <div class="input-grup">
           <input type="text" name="desa" placeholder=" " id="desa" value="<?= isset($data['desa']) ? htmlspecialchars($data['desa']) : ''; ?>"
-           required />
+          required />
           <label for="desa">Desa</label>
         </div>
         <div class="input-grup">
