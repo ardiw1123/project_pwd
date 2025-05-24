@@ -58,45 +58,38 @@ $data = mysqli_fetch_assoc($result)
             <tr>
                 <td><strong>Email</strong></td>
                 <td><?=$data['email'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Nama Lengkap</strong></td>
                 <td><?=$data['nama_lengkap'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>No Handphone</strong></td>
                 <td><?=$data['no_telp'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Provinsi</strong></td>
                 <td><?=$data['provinsi'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Kabupaten</strong></td>
                 <td><?=$data['kabupaten'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Kecamatan</strong></td>
                 <td><?=$data['kecamatan'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Desa</strong></td>
                 <td><?=$data['desa'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
             <tr>
                 <td><strong>Alamat Lengkap</strong></td>
                 <td><?=$data['alamat'];?></td>
-                <td><button class="btn-e" onclick="window.location.href='edit.php'">Edit</button></td>
             </tr>
         </table>
         <button class="btn-e" onclick="window.location.href='logout.php'">Logout</button>
+        <button class="btn-e" onclick="window.location.href='edit.php'">Edit</button>
     </div>
 
     <footer>
