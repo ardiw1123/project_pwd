@@ -549,7 +549,7 @@ footer {
 /* Data Customer Start */
 
 .customer {
-  max-width: 750px;
+  max-width: 600px;
   margin: 30px auto;
   padding: 40px;
   border-radius: 16px;
@@ -628,23 +628,6 @@ footer {
 .data-customer tr td:last-child {
   text-align: center;
   width: 100px;
-}
-
-.data-customer .btn-e {
-  padding: 12px 30px;
-  background-color: #608bc1;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.data-customer .btn-e:hover {
-  background-color: #4a75a8;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 /* Data Customer end */
 

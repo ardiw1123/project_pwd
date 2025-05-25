@@ -1,8 +1,7 @@
 <?php
 session_start();
-
 include 'connect.php';
- 
+
 $product_id = null;
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $product_id = $_GET['id'];
@@ -112,7 +111,6 @@ if ($product_id) {
                         </div>
                         </form>
                     </div>
-
                 </div>
             <?php else : ?>
                 <div class="error-message">
@@ -120,7 +118,6 @@ if ($product_id) {
                     <p><a href="index.php">Kembali ke Halaman Utama</a></p>
                 </div>
             <?php endif; ?>
-
         </div>
 
         <script>
@@ -132,20 +129,18 @@ if ($product_id) {
             }
         </script>
     </section>
-    <?php
-     ?>
-     <footer>
+
+    <footer>
         <p>&copy; 2025 Clau Dy. All rights reserved.</p>
         <p>Follow us on Instagram @ClauDy</p>
         <div class="social-icons">
             <i data-feather="instagram"></i>
-             <i data-feather="facebook"></i>
-             <i data-feather="twitter"></i>
-         </div>
-     </footer>
+            <i data-feather="facebook"></i>
+            <i data-feather="twitter"></i>
+        </div>
+    </footer>
     <script>
-      feather.replace();
+        feather.replace();
     </script>
-    
-     </body>
+    </body>
 </html>
