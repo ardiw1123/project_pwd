@@ -61,6 +61,8 @@ $customer_data = $result_customer->fetch_assoc();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Struk Pembelian</title>
     <link rel="stylesheet" href="CSS/struk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
     <div class="struk-container">
@@ -137,7 +139,12 @@ $customer_data = $result_customer->fetch_assoc();
             Barang yang sudah dibeli tidak dapat ditukar/dikembalikan
         </div>
         
+        <button class="back-btn" onclick="window.location.href='cart.php'">Back</button>
         <button class="print-btn" onclick="window.print()">Cetak Struk</button>
+
     </div>
+    <script>
+    feather.replace();
+</script>
 </body>
 </html>

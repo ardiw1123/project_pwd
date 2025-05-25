@@ -80,6 +80,22 @@ body {
     color: #608BC1;
     box-shadow: 0 6px 14px #749ed1;
 }
+.back-btn{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background: #608BC1;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.back-btn:hover{
+    background: var(--secondary);
+    transform: translateY(-2px);
+    color: #608BC1;
+    box-shadow: 0 6px 14px #749ed1;
+}
 @media print {
     body * {
 visibility: hidden;
