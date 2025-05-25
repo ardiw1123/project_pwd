@@ -1,7 +1,7 @@
 <?php
 include "connect.php";
 session_start();
-$id = $_SESSION['is_login'];
+$id = $_SESSION['user_id'];
 $sql = "SELECT * FROM users WHERE id = '$id'";
 $result = mysqli_query($connect, $sql);
 if (mysqli_num_rows($result) > 0) {
@@ -70,8 +70,8 @@ $alamat = $_POST['alamat'];
           if (empty($email) || empty($nama) || empty($no_handphone) || empty($provinsi) || empty($kabupaten) || empty($kecamatan) || empty($desa) || empty($alamat)) {
             echo "<div class='alert alert-danger mt-3'>Semua field wajib diisi!</div>";
           } else {
-            $sql = "UPDATE users SET email='$email', nama_lengkap='$nama', no_telp='$no_handphone', provinsi='$provinsi', kabupaten='$kabupaten', kecamatan='$kecamatan', desa='$desa', alamat='$alamat' WHERE id='$id'";
-            if (mysqli_query($connect, $sql)) {?>
+            $update = "UPDATE users SET email='$email', nama_lengkap='$nama', no_telp='$no_handphone', provinsi='$provinsi', kabupaten='$kabupaten', kecamatan='$kecamatan', desa='$desa', alamat='$alamat' WHERE id='$id'";
+            if (mysqli_query($connect, $update)) {?>
               <script>
                   alert('Ubah Data Berhasil!')
                   window.location.href = 'dataCustomer.php'
